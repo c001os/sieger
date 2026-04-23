@@ -16,16 +16,17 @@
       </nav>
 
       <!-- Right Actions (Lang + Social) -->
-      <div class="flex flex-col items-end gap-1">
-        <LangSwitcher />
-        <div class="flex gap-3 px-2">
-          <NuxtLink to="https://www.facebook.com/siegersportbar" target="_blank" class="text-white hover:text-primary transition-colors">
-            <UIcon name="i-lucide-facebook" class="w-4 h-4" />
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-4">
+          <NuxtLink to="https://www.facebook.com/siegersportbar" target="_blank" class="text-white/70 hover:text-primary transition-all duration-300 transform hover:scale-110">
+            <UIcon name="i-lucide-facebook" class="w-5 h-5" />
           </NuxtLink>
-          <NuxtLink to="https://www.instagram.com/siegersportbar/" target="_blank" class="text-white hover:text-primary transition-colors">
-            <UIcon name="i-lucide-instagram" class="w-4 h-4" />
+          <NuxtLink to="https://www.instagram.com/siegersportbar/" target="_blank" class="text-white/70 hover:text-primary transition-all duration-300 transform hover:scale-110">
+            <UIcon name="i-lucide-instagram" class="w-5 h-5" />
           </NuxtLink>
         </div>
+        <div class="h-6 w-px bg-white/10 hidden md:block"></div>
+        <LangSwitcher />
       </div>
     </UContainer>
   </header>

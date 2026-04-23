@@ -9,18 +9,18 @@
           
           <!-- Mockup Bubbles based on brief -->
           <div class="relative w-full max-w-md mx-auto">
-            <div class="bg-black/80 backdrop-blur-md border border-white/10 p-6 shadow-2xl z-20 absolute top-0 -left-4 md:-left-12 hover:-translate-y-2 transition-transform duration-300">
-              <UIcon name="i-lucide-tv" class="w-8 h-8 text-primary mb-3" />
+            <div class="bg-black/80 backdrop-blur-md border border-white/10 p-6 shadow-2xl z-20 absolute top-0 -left-4 md:-left-12 hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group">
+              <UIcon name="i-lucide-tv" class="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform duration-500" />
               <h3 class="text-white font-bold tracking-wider">Nagy TV, Hanggal</h3>
             </div>
             
-            <div class="bg-black/80 backdrop-blur-md border border-white/10 p-6 shadow-2xl z-10 absolute top-32 right-0 md:-right-8 hover:-translate-y-2 transition-transform duration-300">
-              <UIcon name="i-lucide-sofa" class="w-8 h-8 text-primary mb-3" />
+            <div class="bg-black/80 backdrop-blur-md border border-white/10 p-6 shadow-2xl z-10 absolute top-32 right-0 md:-right-8 hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group">
+              <UIcon name="i-lucide-sofa" class="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform duration-500" />
               <h3 class="text-white font-bold tracking-wider">Kényelmes boxok</h3>
             </div>
             
-            <div class="bg-primary text-black p-6 shadow-2xl z-30 absolute bottom-0 left-8 md:left-4 hover:-translate-y-2 transition-transform duration-300">
-              <UIcon name="i-lucide-star" class="w-8 h-8 mb-3" />
+            <div class="bg-primary text-black p-6 shadow-2xl z-30 absolute bottom-0 left-8 md:left-4 hover:-translate-y-4 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group">
+              <UIcon name="i-lucide-star" class="w-8 h-8 mb-3 group-hover:scale-110 transition-transform duration-500" />
               <h3 class="font-bold tracking-wider">VIP terem</h3>
             </div>
           </div>

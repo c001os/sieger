@@ -17,15 +17,15 @@
         
         <!-- Render a few items to simulate the 'bubbles' layout from the brief -->
         <div v-for="i in 8" :key="i" class="relative group cursor-pointer w-48 h-48 md:w-56 md:h-56">
-          <div class="absolute inset-0 rounded-full border-2 border-white/10 group-hover:border-primary transition-colors duration-300 overflow-hidden bg-black flex items-center justify-center p-2 z-10 group-hover:z-30 transform group-hover:scale-110 shadow-xl">
-            <img :src="`/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_${[25,27,30,31,32,43][i%6]}.webp`" alt="Burger" class="w-full h-full object-cover rounded-full opacity-80 group-hover:opacity-100 transition-opacity" />
+          <div class="absolute inset-0 rounded-full border-2 border-white/10 group-hover:border-primary transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden bg-black flex items-center justify-center p-2 z-10 group-hover:z-30 transform group-hover:scale-110 shadow-2xl">
+            <img :src="`/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_${[25,27,30,31,32,43][i%6]}.webp`" alt="Burger" class="w-full h-full object-cover rounded-full opacity-60 group-hover:opacity-100 transition-all duration-700 ease-in-out" />
           </div>
           
           <!-- Hover Content (overlaps) -->
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 bg-black/90 backdrop-blur-md border border-primary p-6 shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-40 pointer-events-none text-center">
-            <h3 class="text-primary font-bold uppercase tracking-widest text-lg mb-2">Hamburger {{ i }}</h3>
-            <p class="text-xs text-gray-300 mb-3">Szaftos marhahús, cheddar sajt, házi szósz, friss saláta.</p>
-            <div class="text-white font-bold">5 690 Ft</div>
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 bg-black/95 backdrop-blur-xl border border-primary/50 p-6 shadow-[0_0_50px_rgba(var(--color-primary-500),0.3)] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-40 pointer-events-none text-center">
+            <h3 class="text-primary font-bold uppercase tracking-widest text-lg mb-2 drop-shadow-sm">Hamburger {{ i }}</h3>
+            <p class="text-xs text-gray-300 mb-3 leading-relaxed">Szaftos marhahús, cheddar sajt, házi szósz, friss saláta.</p>
+            <div class="text-white font-black text-xl tracking-tighter">5 690 Ft</div>
           </div>
         </div>
         

@@ -12,16 +12,16 @@
         
         <div v-for="match in matches" :key="match.id" class="group cursor-pointer flex flex-col items-center">
           <!-- Bubble -->
-          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border border-white/10 overflow-hidden bg-black flex items-center justify-center p-6 relative transition-all duration-300 group-hover:scale-110 group-hover:border-primary">
+          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border border-white/10 overflow-hidden bg-black flex items-center justify-center p-6 relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:border-primary shadow-lg group-hover:shadow-primary/20">
             <!-- Logos -->
-            <div class="flex items-center justify-between w-full relative z-10 group-hover:grayscale transition-all duration-300">
+            <div class="flex items-center justify-between w-full relative z-10 group-hover:grayscale group-hover:opacity-30 transition-all duration-700 ease-in-out">
               <img :src="`/media/teams/${match.team1_logo}.webp`" alt="Team 1" class="w-12 h-12 object-contain" />
               <span class="text-white font-bold text-lg mx-2">VS</span>
               <img :src="`/media/teams/${match.team2_logo}.webp`" alt="Team 2" class="w-12 h-12 object-contain" />
             </div>
             
             <!-- Hover CTA Overlay -->
-            <div class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-center justify-center">
+            <div class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-20 flex items-center justify-center">
               <UButton 
                 to="#booking" 
                 color="primary" 
@@ -35,7 +35,7 @@
           </div>
           
           <!-- Info below bubble -->
-          <div class="text-center mt-6 group-hover:text-primary transition-colors">
+          <div class="text-center mt-6 group-hover:text-primary transition-all duration-500 ease-in-out transform group-hover:translate-y-1">
             <div class="text-sm text-gray-400 font-bold tracking-widest uppercase mb-1">{{ match.date }}</div>
             <div class="text-white font-medium text-lg">{{ match.time }}</div>
             <div class="text-xs text-gray-500 mt-1 uppercase">{{ match.league }}</div>
