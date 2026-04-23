@@ -1,0 +1,39 @@
+{
+  "nav": {
+    "start": "Start",
+    "delivery": "Lieferung",
+    "about": "Über Sieger",
+    "specials": "Spezialitäten",
+    "food_menu": "Speisekarte",
+    "drinks_menu": "Getränkekarte",
+    "gallery": "Galerie"
+  },
+  "hero": {
+    "subtitle": "RESTAURANT · BAR · SPORT · FREIZEIT",
+    "welcome": "Willkommen in der Sieger Sport Bar!"
+  },
+  "about": {
+    "title": "Über uns",
+    "slogan1": "Genieße alles zu seiner Zeit!",
+    "slogan2": "Sporterlebnis, ungarische und internationale Spezialitäten an einem Ort.",
+    "description": "Die beliebteste Sportbar in Győr wartet auf dich. Sei unser Gast für ein leckeres Mittag- oder Abendessen! Feuere dein Lieblingsteam beim nächsten Spiel an!"
+  },
+  "buttons": {
+    "book_table": "Tisch reservieren",
+    "full_menu": "Komplette Karte"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "address": "Adresse",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "opening_hours": "Öffnungszeiten",
+    "social": "Folge uns",
+    "rights": "© 2026 Sieger Sport Bar. Alle Rechte vorbehalten!",
+    "privacy": "Datenschutz",
+    "monday": "Montag",
+    "tue_sat": "Dienstag – Samstag",
+    "sunday": "Sonntag",
+    "closed": "GESCHLOSSEN"
+  }
+}

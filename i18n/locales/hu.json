@@ -1,0 +1,39 @@
+{
+  "nav": {
+    "start": "Start",
+    "delivery": "Kiszállítás",
+    "about": "A Sieger",
+    "specials": "Specialitások",
+    "food_menu": "Étlap",
+    "drinks_menu": "Itallap",
+    "gallery": "Galéria"
+  },
+  "hero": {
+    "subtitle": "ÉTTEREM · BÁR · SPORT · SZABADIDŐ",
+    "welcome": "Üdvözöl a Sieger Sport Bár!"
+  },
+  "about": {
+    "title": "Bemutatkozás",
+    "slogan1": "Élvezz ki mindent a maga idejében!",
+    "slogan2": "Sportélmény, magyar és nemzetközi étel különlegességek egy helyen.",
+    "description": "Győr legnépszerűbb sport bárja Téged is vár szeretettel. Légy vendégünk egy finom ebédre vagy vacsorára! Szurkolj nálunk kedvenc csapatodnak a következő meccsen!"
+  },
+  "buttons": {
+    "book_table": "Asztalfoglalás",
+    "full_menu": "Teljes étlap"
+  },
+  "footer": {
+    "contact": "Elérhetőségek",
+    "address": "Cím",
+    "email": "E-mail",
+    "phone": "Telefonszám",
+    "opening_hours": "Nyitvatartás",
+    "social": "Kövess minket",
+    "rights": "© 2026 Sieger Sport Bár. Minden jog fenntartva!",
+    "privacy": "Adatvédelmi tájékoztató",
+    "monday": "Hétfő",
+    "tue_sat": "Kedd – Szombat",
+    "sunday": "Vasárnap",
+    "closed": "ZÁRVA"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "nav": {
+    "start": "Start",
+    "delivery": "Delivery",
+    "about": "About Sieger",
+    "specials": "Specials",
+    "food_menu": "Food Menu",
+    "drinks_menu": "Drinks Menu",
+    "gallery": "Gallery"
+  },
+  "hero": {
+    "subtitle": "RESTAURANT · BAR · SPORT · LEISURE",
+    "welcome": "Welcome to Sieger Sport Bar!"
+  },
+  "about": {
+    "title": "About Us",
+    "slogan1": "Enjoy everything in its own time!",
+    "slogan2": "Sports experience, Hungarian and international food specialties in one place.",
+    "description": "Győr's most popular sports bar is waiting for you. Be our guest for a delicious lunch or dinner! Cheer for your favorite team with us at the next game!"
+  },
+  "buttons": {
+    "book_table": "Book a Table",
+    "full_menu": "Full Menu"
+  },
+  "footer": {
+    "contact": "Contact",
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "opening_hours": "Opening Hours",
+    "social": "Follow Us",
+    "rights": "© 2026 Sieger Sport Bar. All rights reserved!",
+    "privacy": "Privacy Policy",
+    "monday": "Monday",
+    "tue_sat": "Tuesday – Saturday",
+    "sunday": "Sunday",
+    "closed": "CLOSED"
+  }
+}
