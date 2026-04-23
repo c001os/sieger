@@ -12,12 +12,12 @@
         
         <div v-for="match in matches" :key="match.id" class="group cursor-pointer flex flex-col items-center">
           <!-- Bubble -->
-          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border border-white/10 overflow-hidden bg-black flex items-center justify-center p-6 relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:border-primary shadow-lg group-hover:shadow-primary/20">
+          <div class="w-32 h-32 md:w-48 md:h-48 rounded-full border border-white/10 overflow-hidden bg-black flex items-center justify-center p-4 md:p-6 relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:border-primary shadow-lg group-hover:shadow-primary/20">
             <!-- Logos -->
             <div class="flex items-center justify-between w-full relative z-10 group-hover:grayscale group-hover:opacity-30 transition-all duration-700 ease-in-out">
-              <img :src="`/media/teams/${match.team1_logo}.webp`" alt="Team 1" class="w-12 h-12 object-contain" />
-              <span class="text-white font-bold text-lg mx-2">VS</span>
-              <img :src="`/media/teams/${match.team2_logo}.webp`" alt="Team 2" class="w-12 h-12 object-contain" />
+              <img :src="`/media/teams/${match.team1_logo}.webp`" alt="Team 1" class="w-8 h-8 md:w-12 md:h-12 object-contain" />
+              <span class="text-white font-bold text-sm md:text-lg mx-1 md:mx-2">VS</span>
+              <img :src="`/media/teams/${match.team2_logo}.webp`" alt="Team 2" class="w-8 h-8 md:w-12 md:h-12 object-contain" />
             </div>
             
             <!-- Hover CTA Overlay -->
@@ -27,7 +27,7 @@
                 color="primary" 
                 variant="solid" 
                 size="sm"
-                class="uppercase tracking-wider font-bold"
+                class="uppercase tracking-wider font-bold text-[10px] md:text-sm"
               >
                 Foglalás
               </UButton>
