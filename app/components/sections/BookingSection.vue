@@ -18,7 +18,7 @@
                                 name="i-lucide-tv"
                                 class="w-6 h-6 md:w-8 md:h-8 text-primary mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-500"
                             />
-                            <h3 class="text-default font-bold tracking-wider text-sm md:text-base">Nagy TV, Hanggal</h3>
+                            <h3 class="text-default font-bold tracking-wider text-sm md:text-base">14 Nagy TV, Hanggal</h3>
                         </div>
 
                         <div

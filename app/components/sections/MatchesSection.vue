@@ -9,57 +9,45 @@
                 </p>
             </div>
 
-            <!-- Match Bubbles -->
-            <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+            <!-- Match Cards -->
+            <div class="flex flex-col items-center gap-4 md:gap-6 max-w-3xl mx-auto">
                 <div
                     v-for="match in matches"
                     :key="match.id"
-                    class="group cursor-pointer flex flex-col items-center"
+                    class="w-full bg-elevated hover:bg-default border border-default rounded-2xl px-4 py-4 md:px-8 md:py-5 transition-colors duration-300"
                 >
-                    <!-- Bubble -->
-                    <div
-                        class="w-32 h-32 md:w-48 md:h-48 rounded-full border border-default overflow-hidden bg-elevated flex items-center justify-center p-4 md:p-6 relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:border-primary shadow-lg group-hover:shadow-primary/20"
-                    >
-                        <!-- Logos -->
-                        <div
-                            class="flex items-center justify-between w-full relative z-10 group-hover:grayscale group-hover:opacity-30 transition-all duration-700 ease-in-out"
-                        >
-                            <img
-                                :src="`/media/teams/${match.team1_logo}.webp`"
-                                alt="Team 1"
-                                class="w-8 h-8 md:w-12 md:h-12 object-contain"
-                            />
-                            <span class="text-default font-bold text-sm md:text-lg mx-1 md:mx-2">VS</span>
-                            <img
-                                :src="`/media/teams/${match.team2_logo}.webp`"
-                                alt="Team 2"
-                                class="w-8 h-8 md:w-12 md:h-12 object-contain"
-                            />
+                    <div class="flex items-center justify-between gap-3 md:gap-6">
+                        <!-- Home team -->
+                        <div class="flex items-center gap-2 md:gap-3 flex-1 justify-end">
+                            <span class="text-default font-bold text-sm md:text-xl text-right leading-tight">
+                                {{ match.team1.name }}
+                            </span>
+                            <span
+                                class="w-1 md:w-1.5 h-6 md:h-8 rounded-full flex-shrink-0"
+                                :style="{ backgroundColor: match.team1.color }"
+                            ></span>
                         </div>
 
-                        <!-- Hover CTA Overlay -->
-                        <div
-                            class="absolute inset-0 bg-elevated/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-20 flex items-center justify-center"
-                        >
-                            <UButton
-                                to="#booking"
-                                color="primary"
-                                variant="solid"
-                                size="sm"
-                                class="uppercase tracking-wider font-bold text-[10px] md:text-sm"
-                            >
-                                Foglalás
-                            </UButton>
+                        <!-- Center time & date -->
+                        <div class="flex flex-col items-center px-2 md:px-4 min-w-[5.5rem] md:min-w-[7rem]">
+                            <span class="text-default font-black text-lg md:text-2xl tracking-wide">
+                                {{ match.time }}
+                            </span>
+                            <span class="text-muted text-[10px] md:text-xs font-bold tracking-wider uppercase">
+                                {{ match.date }}
+                            </span>
                         </div>
-                    </div>
 
-                    <!-- Info below bubble -->
-                    <div
-                        class="text-center mt-6 group-hover:text-primary transition-all duration-500 ease-in-out transform group-hover:translate-y-1"
-                    >
-                        <div class="text-sm text-muted font-bold tracking-widest uppercase mb-1">{{ match.date }}</div>
-                        <div class="text-default font-medium text-lg">{{ match.time }}</div>
-                        <div class="text-xs text-dimmed mt-1 uppercase">{{ match.league }}</div>
+                        <!-- Away team -->
+                        <div class="flex items-center gap-2 md:gap-3 flex-1">
+                            <span
+                                class="w-1 md:w-1.5 h-6 md:h-8 rounded-full flex-shrink-0"
+                                :style="{ backgroundColor: match.team2.color }"
+                            ></span>
+                            <span class="text-default font-bold text-sm md:text-xl leading-tight">
+                                {{ match.team2.name }}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,39 +56,34 @@
 </template>
 
 <script setup>
-// Mock data based on the extracted team logos and brief
 const matches = [
     {
         id: 1,
-        date: 'Október 26.',
+        team1: { name: 'Real Madrid', color: '#FEBE10' },
+        team2: { name: 'Barcelona', color: '#A50044' },
         time: '21:00',
-        league: 'El Classico',
-        team1_logo: 'eszkoz_100',
-        team2_logo: 'eszkoz_110',
+        date: 'Holnap',
     },
     {
         id: 2,
-        date: 'Október 27.',
+        team1: { name: 'Bayern Munich', color: '#DC052D' },
+        team2: { name: 'Dortmund', color: '#FDE100' },
         time: '18:30',
-        league: 'Premier League',
-        team1_logo: 'eszkoz_120',
-        team2_logo: 'eszkoz_130',
+        date: 'Szombat, okt. 14.',
     },
     {
         id: 3,
-        date: 'Október 28.',
-        time: '20:45',
-        league: 'Serie A',
-        team1_logo: 'eszkoz_140',
-        team2_logo: 'eszkoz_150',
+        team1: { name: 'Arsenal', color: '#EF0107' },
+        team2: { name: 'Chelsea', color: '#034694' },
+        time: '15:00',
+        date: 'Vasárnap, okt. 15.',
     },
     {
         id: 4,
-        date: 'Október 29.',
-        time: '21:00',
-        league: 'Bajnokok Ligája',
-        team1_logo: 'eszkoz_160',
-        team2_logo: 'eszkoz_170',
+        team1: { name: 'Man City', color: '#6CABDD' },
+        team2: { name: 'Liverpool', color: '#C8102E' },
+        time: '12:30',
+        date: 'Vasárnap, okt. 15.',
     },
 ];
 </script>

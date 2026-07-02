@@ -25,6 +25,11 @@ const downloads = [
         description: 'Könnyedebb falatok és ínyencségek a meccsek mellé.',
         file: '/documents/sieger_deli_felido_01_19.pdf',
     },
+    {
+        title: 'Itallap',
+        description: 'Aktuális italválasztékunk PDF formátumban.',
+        file: '/documents/sieger_itallap_2026_weboldalra.pdf',
+    },
 ];
 
 function text(obj) {
@@ -99,7 +104,7 @@ const categories = computed(() => menu.value?.categories ?? []);
                     <p class="text-muted max-w-2xl mx-auto">Az alábbi PDF-eket letöltheted és elmentheted.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <div
                         v-for="menuFile in downloads"
                         :key="menuFile.file"
