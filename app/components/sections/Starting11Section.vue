@@ -1,54 +1,335 @@
+<script setup>
+const { locale } = useI18n();
+
+function text(obj) {
+    return obj?.[locale.value] || obj?.hu || '';
+}
+
+const foodImages = {
+    img25: '/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_25.webp',
+    img27: '/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_27.webp',
+    img30: '/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_30.webp',
+    img31: '/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_31.webp',
+    img32: '/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_32.webp',
+    img43: '/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_43.webp',
+    malacos: '/media/starting11/malacos_krumpli.webp',
+};
+
+const teamLogos = {
+    l60: '/media/teams/eszkoz_60.webp',
+    l70: '/media/teams/eszkoz_70.webp',
+    l80: '/media/teams/eszkoz_80.webp',
+    l90: '/media/teams/eszkoz_90.webp',
+    l100: '/media/teams/eszkoz_100.webp',
+    l110: '/media/teams/eszkoz_110.webp',
+    l120: '/media/teams/eszkoz_120.webp',
+    l130: '/media/teams/eszkoz_130.webp',
+    l140: '/media/teams/eszkoz_140.webp',
+    l150: '/media/teams/eszkoz_150.webp',
+    l160: '/media/teams/eszkoz_160.webp',
+    l170: '/media/teams/eszkoz_170.webp',
+    l180: '/media/teams/eszkoz_180.webp',
+    l190: '/media/teams/eszkoz_190.webp',
+    l200: '/media/teams/eszkoz_200.webp',
+};
+
+const starters = [
+    {
+        name: { hu: 'Húsleves', en: 'Beef Broth', de: 'Rinderbrühe' },
+        description: {
+            hu: 'Tradicionális marhahúsleves velős csonttal.',
+            en: 'Traditional beef broth with marrow bone.',
+            de: 'Traditionelle Rinderbrühe mit Markknochen.',
+        },
+        price: '2 490 Ft',
+        logo: teamLogos.l60,
+        foodImage: foodImages.img25,
+        position: { top: '6%', left: '50%' },
+    },
+    {
+        name: { hu: 'Kamra ízelítő', en: 'Pantry Platter', de: 'Vorspeisenplatte' },
+        description: {
+            hu: 'Tepertőkrém, kolbász, sonka, sajt.',
+            en: 'Pork crackling spread, sausage, ham, cheese.',
+            de: 'Griebenaufstrich, Wurst, Schinken, Käse.',
+        },
+        price: '3 490 Ft',
+        logo: teamLogos.l70,
+        foodImage: foodImages.img27,
+        position: { top: '22%', left: '18%' },
+    },
+    {
+        name: { hu: 'Tatár beef steak', en: 'Beef Tartare', de: 'Beef Tatar' },
+        description: {
+            hu: 'Frissen készült tatár beef steak.',
+            en: 'Freshly made beef tartare.',
+            de: 'Frisch zubereitetes Beef Tatar.',
+        },
+        price: '5 790 Ft',
+        logo: teamLogos.l80,
+        foodImage: foodImages.img30,
+        position: { top: '22%', left: '39%' },
+    },
+    {
+        name: { hu: 'Sieger burger', en: 'Sieger Burger', de: 'Sieger Burger' },
+        description: {
+            hu: 'Házi kovászos buci, marhahús pogácsa, kecskesajt, lilahagymalekvár, coleslaw.',
+            en: 'Homemade sourdough bun, beef patty, goat cheese, red onion jam, coleslaw.',
+            de: 'Hausgemachter Sauerteig-Bun, Rind Patty, Ziegenkäse, rote Zwiebelmarmelade, Coleslaw.',
+        },
+        price: '4 990 Ft',
+        logo: teamLogos.l90,
+        foodImage: foodImages.img31,
+        position: { top: '22%', left: '61%' },
+    },
+    {
+        name: { hu: 'BBQ spare ribs', en: 'BBQ Spare Ribs', de: 'BBQ Spareribs' },
+        description: {
+            hu: 'BBQ spare ribs burgonya chips-szel.',
+            en: 'BBQ spare ribs with potato chips.',
+            de: 'BBQ Spareribs mit Kartoffelchips.',
+        },
+        price: '5 990 Ft',
+        logo: teamLogos.l100,
+        foodImage: foodImages.img32,
+        position: { top: '22%', left: '82%' },
+    },
+    {
+        name: { hu: 'Kacsacomb', en: 'Duck Leg', de: 'Entenkeule' },
+        description: {
+            hu: 'Kacsacomb sült káposztás cvekedlivel.',
+            en: 'Duck leg with fried cabbage noodles.',
+            de: 'Entenkeule mit Krautnudeln.',
+        },
+        price: '5 490 Ft',
+        logo: teamLogos.l110,
+        foodImage: foodImages.img43,
+        position: { top: '45%', left: '15%' },
+    },
+    {
+        name: { hu: 'BBQ csirkeszárnyak', en: 'BBQ Chicken Wings', de: 'BBQ Chicken Wings' },
+        description: {
+            hu: 'Burgonya chips, sweet chili & BBQ mártogató.',
+            en: 'Potato chips with sweet chili & BBQ dips.',
+            de: 'Kartoffelchips mit Sweet-Chili- und BBQ-Dip.',
+        },
+        price: '4 190 Ft',
+        logo: teamLogos.l120,
+        foodImage: foodImages.malacos,
+        position: { top: '45%', left: '38%' },
+    },
+    {
+        name: { hu: 'Pulled pork szendvics', en: 'Pulled Pork Sandwich', de: 'Pulled-Pork-Sandwich' },
+        description: {
+            hu: 'Pulled pork szendvics burgonya chips-szel.',
+            en: 'Pulled pork sandwich with potato chips.',
+            de: 'Pulled-Pork-Sandwich mit Kartoffelchips.',
+        },
+        price: '4 490 Ft',
+        logo: teamLogos.l130,
+        foodImage: foodImages.img25,
+        position: { top: '45%', left: '62%' },
+    },
+    {
+        name: { hu: 'Mézes-chilis lazac', en: 'Honey-Chili Salmon', de: 'Honig-Chili-Lachs' },
+        description: {
+            hu: 'Mézes-chilis lazac steak sült zöldséges üvegtésztával.',
+            en: 'Honey-chili salmon steak with stir-fried glass noodles and vegetables.',
+            de: 'Lachssteak mit Honig-Chili-Glasur, gebratene Glasnudeln mit Gemüse.',
+        },
+        price: '4 990 Ft',
+        logo: teamLogos.l140,
+        foodImage: foodImages.img27,
+        position: { top: '45%', left: '85%' },
+    },
+    {
+        name: { hu: 'Chilis bab + nachos', en: 'Chili con Carne', de: 'Chili con Carne' },
+        description: {
+            hu: 'Chilis bab nachos-szal.',
+            en: 'Chili con carne with nachos.',
+            de: 'Chili con Carne mit Nachos.',
+        },
+        price: '3 990 Ft',
+        logo: teamLogos.l150,
+        foodImage: foodImages.img30,
+        position: { top: '72%', left: '32%' },
+    },
+    {
+        name: { hu: '„Malacos krumpli”', en: 'Sieger Pulled Pork Potatoes', de: 'Sieger Spanferkel-Kartoffeln' },
+        description: {
+            hu: 'Hasábburgonya, pulled pork, cheddar sajt, jalapeno.',
+            en: 'French fries, pulled pork, cheddar cheese, jalapeno.',
+            de: 'Pommes Frites, Pulled Pork, Cheddar-Käse, Jalapeno.',
+        },
+        price: '4 490 Ft',
+        logo: teamLogos.l160,
+        foodImage: foodImages.malacos,
+        position: { top: '72%', left: '68%' },
+    },
+];
+
+const substitutes = [
+    {
+        name: { hu: 'Cézár saláta', en: 'Caesar Salad', de: 'Caesar Salat' },
+        description: {
+            hu: 'Csirkével, tigrisrák +600 Ft.',
+            en: 'With chicken, tiger prawns available +600 HUF.',
+            de: 'Mit Hähnchen, auf Wunsch mit Riesengarnelen +600 HUF.',
+        },
+        price: '3 990 Ft',
+        logo: teamLogos.l170,
+        foodImage: foodImages.img31,
+    },
+    {
+        name: { hu: 'Császármorzsa', en: 'Vienna Crumbs', de: 'Kaiserschmarrn' },
+        description: {
+            hu: 'Klasszikus császármorzsa.',
+            en: 'Classic Vienna crumbs.',
+            de: 'Klassischer Kaiserschmarrn.',
+        },
+        price: '3 490 Ft',
+        logo: teamLogos.l180,
+        foodImage: foodImages.img32,
+    },
+    {
+        name: { hu: 'Bajor perecek', en: 'Bavarian Pretzels', de: 'Bayerische Brezeln' },
+        description: {
+            hu: 'Cheddar sajtos, édes-mustáros szósszal.',
+            en: 'With cheddar cheese and sweet mustard sauce.',
+            de: 'Mit Cheddar-Käse und süßem Senf.',
+        },
+        price: '2 590 Ft',
+        logo: teamLogos.l190,
+        foodImage: foodImages.img43,
+    },
+    {
+        name: { hu: 'Rántottcsirke variáció', en: 'Breaded Fried Chicken', de: 'Paniertes Hähnchen' },
+        description: {
+            hu: 'Rántottcsirke variáció hasábburgonyával.',
+            en: 'Breaded fried chicken selection with french fries.',
+            de: 'Panierte Hähnchenauswahl mit Pommes frites.',
+        },
+        price: '4 490 Ft',
+        logo: teamLogos.l200,
+        foodImage: foodImages.img25,
+    },
+];
+
+const allergens = [
+    { code: '1', hu: 'Glutén', en: 'Gluten', de: 'Gluten' },
+    { code: '2', hu: 'Rákfélék', en: 'Crustaceans', de: 'Krebstiere' },
+    { code: '3', hu: 'Tojás', en: 'Eggs', de: 'Eier' },
+    { code: '4', hu: 'Hal', en: 'Fish', de: 'Fisch' },
+    { code: '5', hu: 'Földimogyoró', en: 'Peanuts', de: 'Erdnüsse' },
+    { code: '6', hu: 'Szójabab', en: 'Soybeans', de: 'Sojabohnen' },
+    { code: '7', hu: 'Tej', en: 'Milk', de: 'Milch' },
+    { code: '8', hu: 'Diófélék', en: 'Nuts', de: 'Schalenfrüchte' },
+    { code: '9', hu: 'Zeller', en: 'Celery', de: 'Sellerie' },
+    { code: '10', hu: 'Mustár', en: 'Mustard', de: 'Senf' },
+    { code: '11', hu: 'Szezámmag', en: 'Sesame seeds', de: 'Sesamsamen' },
+    { code: '12', hu: 'Kén-dioxid', en: 'Sulphur dioxide', de: 'Schwefeldioxid' },
+    { code: '13', hu: 'Csillagfürt', en: 'Lupin', de: 'Lupine' },
+    { code: '14', hu: 'Puhatestűek', en: 'Molluscs', de: 'Weichtiere' },
+];
+</script>
+
 <template>
-  <section class="py-24 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden">
-    <!-- Background visual -->
-    <div class="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-      <div class="w-[800px] h-[800px] border border-primary rounded-full blur-[100px]"></div>
-    </div>
+    <section class="py-24 bg-default border-t border-default relative overflow-hidden">
+        <UContainer class="relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-black text-default uppercase tracking-wider mb-4">
+                    Kezdő 11-es ajánlatunk
+                </h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Válogass a bajnokoknak kijáró fogások közül! Kézműves burgerek és különlegességek, egyedi
+                    felállásban. Húzd az egeret a csapatlogók fölé, és nézd meg, melyik étellel játszanak!
+                </p>
+            </div>
 
-    <UContainer class="relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-wider mb-4">Kezdő 11-es ajánlatunk</h2>
-        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
-        <p class="text-gray-400 max-w-2xl mx-auto">Válogass a bajnokoknak kijáró fogások közül! Kézműves burgerek és különlegességek, egyedi felállásban.</p>
-      </div>
+            <!-- Desktop pitch layout -->
+            <div class="hidden md:block relative max-w-6xl mx-auto aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                    src="/media/starting11/backgrounds/kezdo_11_fooldal_hatter_fekvo.webp"
+                    alt="Focipálya"
+                    class="absolute inset-0 w-full h-full object-cover"
+                />
 
-      <!-- Mockup of Starting 11 Layout (Bubbles) -->
-      <div class="max-w-5xl mx-auto relative min-h-[500px] flex flex-wrap justify-center gap-6">
-        
-        <!-- Render a few items to simulate the 'bubbles' layout from the brief -->
-        <div v-for="i in 8" :key="i" class="relative group cursor-pointer w-36 h-36 md:w-56 md:h-56">
-          <div class="absolute inset-0 rounded-full border-2 border-white/10 group-hover:border-primary transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] overflow-hidden bg-black flex items-center justify-center p-1 md:p-2 z-10 group-hover:z-30 transform group-hover:scale-110 shadow-2xl">
-            <img :src="`/media/starting11/sze_sieger_etlap_2025_11_04_adorjan_andras_${[25,27,30,31,32,43][i%6]}.webp`" alt="Burger" class="w-full h-full object-cover rounded-full opacity-60 group-hover:opacity-100 transition-all duration-700 ease-in-out" />
-          </div>
-          
-          <!-- Hover Content (overlaps) -->
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 md:w-64 bg-black/95 backdrop-blur-xl border border-primary/50 p-4 md:p-6 shadow-[0_0_50px_rgba(var(--color-primary-500),0.3)] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-40 pointer-events-none text-center">
-            <h3 class="text-primary font-bold uppercase tracking-widest text-sm md:text-lg mb-1 md:mb-2 drop-shadow-sm">Hamburger {{ i }}</h3>
-            <p class="text-[10px] md:text-xs text-gray-300 mb-2 md:mb-3 leading-relaxed">Szaftos marhahús, cheddar sajt, házi szósz, friss saláta.</p>
-            <div class="text-white font-black text-lg md:text-xl tracking-tighter">5 690 Ft</div>
-          </div>
-        </div>
-        
-      </div>
+                <Starting11Bubble
+                    v-for="(item, index) in starters"
+                    :key="index"
+                    :item="item"
+                    :reverse="item.position.left > 50"
+                    :delay="index * 100"
+                    class="absolute"
+                    :style="{
+                        top: item.position.top,
+                        left: item.position.left,
+                        transform: 'translate(-50%, -50%)',
+                    }"
+                />
+            </div>
 
-      <!-- Cserek / Allergének CTA -->
-      <div class="mt-20 flex flex-col md:flex-row items-center justify-center gap-8 bg-white/5 border border-white/10 p-8 rounded-lg">
-        <div class="text-center md:text-left flex-1">
-          <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-2">Cserepad / Köretek</h3>
-          <p class="text-sm text-gray-400">Édesburgonya, friss saláta, grillezett zöldség, házi savanyúságok.</p>
-        </div>
-        <UButton 
-          to="/documents/sieger_kezdo_11_altalanos_2025_10_a4.pdf" 
-          target="_blank"
-          color="primary" 
-          variant="outline" 
-          size="lg"
-          class="uppercase tracking-widest font-bold"
-        >
-          Részletes ajánlat
-        </UButton>
-      </div>
+            <!-- Mobile list layout -->
+            <div
+                class="md:hidden relative rounded-2xl overflow-hidden bg-cover bg-center p-6"
+                style="background-image: url('/media/starting11/backgrounds/kezdo_11_fooldal_hatter_allo.webp')"
+            >
+                <div class="absolute inset-0 bg-black/40"></div>
+                <div class="relative z-10 flex flex-col gap-4">
+                    <Starting11Bubble
+                        v-for="(item, index) in starters"
+                        :key="index"
+                        :item="item"
+                        :delay="index * 80"
+                        class="self-start"
+                    />
+                </div>
+            </div>
 
-    </UContainer>
-  </section>
+            <!-- Substitutes -->
+            <div
+                class="mt-16 md:mt-24 bg-[#0B1E33] border-y border-default/30 py-12 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 xl:-mx-12 xl:px-12"
+            >
+                <UContainer>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl md:text-3xl font-black text-white uppercase tracking-wider">Cserék</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 justify-items-center">
+                        <Starting11Bubble
+                            v-for="(item, index) in substitutes"
+                            :key="index"
+                            :item="item"
+                            :reverse="index % 2 === 1"
+                            :delay="index * 100"
+                        />
+                    </div>
+                </UContainer>
+            </div>
+
+            <!-- Allergens -->
+            <div class="mt-16 md:mt-24 max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl md:text-3xl font-black text-default uppercase tracking-wider">Allergének</h3>
+                </div>
+                <div class="bg-elevated border border-default rounded-xl p-6 md:p-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                        <div
+                            v-for="allergen in allergens"
+                            :key="allergen.code"
+                            class="flex items-center gap-3 text-sm text-muted"
+                        >
+                            <span
+                                class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold"
+                            >
+                                {{ allergen.code }}
+                            </span>
+                            <span>{{ text(allergen) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </UContainer>
+    </section>
 </template>

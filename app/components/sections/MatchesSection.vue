@@ -1,59 +1,106 @@
 <template>
-  <section class="py-24 bg-[#111] border-t border-white/5 relative">
-    <UContainer>
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-wider mb-4">Meccslista</h2>
-        <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
-        <p class="text-gray-400 max-w-2xl mx-auto">Kövesd nálunk a legfontosabb sporteseményeket! Foglalj asztalt időben a kiemelt mérkőzésekre.</p>
-      </div>
-
-      <!-- Match Bubbles -->
-      <div class="flex flex-wrap justify-center gap-8 md:gap-12">
-        
-        <div v-for="match in matches" :key="match.id" class="group cursor-pointer flex flex-col items-center">
-          <!-- Bubble -->
-          <div class="w-32 h-32 md:w-48 md:h-48 rounded-full border border-white/10 overflow-hidden bg-black flex items-center justify-center p-4 md:p-6 relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:border-primary shadow-lg group-hover:shadow-primary/20">
-            <!-- Logos -->
-            <div class="flex items-center justify-between w-full relative z-10 group-hover:grayscale group-hover:opacity-30 transition-all duration-700 ease-in-out">
-              <img :src="`/media/teams/${match.team1_logo}.webp`" alt="Team 1" class="w-8 h-8 md:w-12 md:h-12 object-contain" />
-              <span class="text-white font-bold text-sm md:text-lg mx-1 md:mx-2">VS</span>
-              <img :src="`/media/teams/${match.team2_logo}.webp`" alt="Team 2" class="w-8 h-8 md:w-12 md:h-12 object-contain" />
+    <section class="py-24 bg-muted border-t border-default relative">
+        <UContainer>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-default uppercase tracking-wider mb-4">Meccslista</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Kövesd nálunk a legfontosabb sporteseményeket! Foglalj asztalt időben a kiemelt mérkőzésekre.
+                </p>
             </div>
-            
-            <!-- Hover CTA Overlay -->
-            <div class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-20 flex items-center justify-center">
-              <UButton 
-                to="#booking" 
-                color="primary" 
-                variant="solid" 
-                size="sm"
-                class="uppercase tracking-wider font-bold text-[10px] md:text-sm"
-              >
-                Foglalás
-              </UButton>
+
+            <!-- Match Bubbles -->
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+                <div
+                    v-for="match in matches"
+                    :key="match.id"
+                    class="group cursor-pointer flex flex-col items-center"
+                >
+                    <!-- Bubble -->
+                    <div
+                        class="w-32 h-32 md:w-48 md:h-48 rounded-full border border-default overflow-hidden bg-elevated flex items-center justify-center p-4 md:p-6 relative transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:border-primary shadow-lg group-hover:shadow-primary/20"
+                    >
+                        <!-- Logos -->
+                        <div
+                            class="flex items-center justify-between w-full relative z-10 group-hover:grayscale group-hover:opacity-30 transition-all duration-700 ease-in-out"
+                        >
+                            <img
+                                :src="`/media/teams/${match.team1_logo}.webp`"
+                                alt="Team 1"
+                                class="w-8 h-8 md:w-12 md:h-12 object-contain"
+                            />
+                            <span class="text-default font-bold text-sm md:text-lg mx-1 md:mx-2">VS</span>
+                            <img
+                                :src="`/media/teams/${match.team2_logo}.webp`"
+                                alt="Team 2"
+                                class="w-8 h-8 md:w-12 md:h-12 object-contain"
+                            />
+                        </div>
+
+                        <!-- Hover CTA Overlay -->
+                        <div
+                            class="absolute inset-0 bg-elevated/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-20 flex items-center justify-center"
+                        >
+                            <UButton
+                                to="#booking"
+                                color="primary"
+                                variant="solid"
+                                size="sm"
+                                class="uppercase tracking-wider font-bold text-[10px] md:text-sm"
+                            >
+                                Foglalás
+                            </UButton>
+                        </div>
+                    </div>
+
+                    <!-- Info below bubble -->
+                    <div
+                        class="text-center mt-6 group-hover:text-primary transition-all duration-500 ease-in-out transform group-hover:translate-y-1"
+                    >
+                        <div class="text-sm text-muted font-bold tracking-widest uppercase mb-1">{{ match.date }}</div>
+                        <div class="text-default font-medium text-lg">{{ match.time }}</div>
+                        <div class="text-xs text-dimmed mt-1 uppercase">{{ match.league }}</div>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-          <!-- Info below bubble -->
-          <div class="text-center mt-6 group-hover:text-primary transition-all duration-500 ease-in-out transform group-hover:translate-y-1">
-            <div class="text-sm text-gray-400 font-bold tracking-widest uppercase mb-1">{{ match.date }}</div>
-            <div class="text-white font-medium text-lg">{{ match.time }}</div>
-            <div class="text-xs text-gray-500 mt-1 uppercase">{{ match.league }}</div>
-          </div>
-        </div>
-
-      </div>
-
-    </UContainer>
-  </section>
+        </UContainer>
+    </section>
 </template>
 
 <script setup>
 // Mock data based on the extracted team logos and brief
 const matches = [
-  { id: 1, date: 'Október 26.', time: '21:00', league: 'El Classico', team1_logo: 'eszkoz_100', team2_logo: 'eszkoz_110' },
-  { id: 2, date: 'Október 27.', time: '18:30', league: 'Premier League', team1_logo: 'eszkoz_120', team2_logo: 'eszkoz_130' },
-  { id: 3, date: 'Október 28.', time: '20:45', league: 'Serie A', team1_logo: 'eszkoz_140', team2_logo: 'eszkoz_150' },
-  { id: 4, date: 'Október 29.', time: '21:00', league: 'Bajnokok Ligája', team1_logo: 'eszkoz_160', team2_logo: 'eszkoz_170' }
-]
+    {
+        id: 1,
+        date: 'Október 26.',
+        time: '21:00',
+        league: 'El Classico',
+        team1_logo: 'eszkoz_100',
+        team2_logo: 'eszkoz_110',
+    },
+    {
+        id: 2,
+        date: 'Október 27.',
+        time: '18:30',
+        league: 'Premier League',
+        team1_logo: 'eszkoz_120',
+        team2_logo: 'eszkoz_130',
+    },
+    {
+        id: 3,
+        date: 'Október 28.',
+        time: '20:45',
+        league: 'Serie A',
+        team1_logo: 'eszkoz_140',
+        team2_logo: 'eszkoz_150',
+    },
+    {
+        id: 4,
+        date: 'Október 29.',
+        time: '21:00',
+        league: 'Bajnokok Ligája',
+        team1_logo: 'eszkoz_160',
+        team2_logo: 'eszkoz_170',
+    },
+];
 </script>

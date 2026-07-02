@@ -1,64 +1,152 @@
+<script setup>
+const specials = [
+    {
+        name: 'Bélszín steak',
+        desc: 'Burgonyapüré, grillezett zöldségek',
+        image: '/media/food/specials/steak.webp',
+    },
+    {
+        name: 'Sieger „malacos krumpli”',
+        desc: 'Hasábburgonya, pulled pork, cheddar sajt, jalapeno',
+        image: '/media/food/burgerek.webp',
+    },
+    {
+        name: 'Csirkemell steak',
+        desc: 'Édesburgonya püré',
+        image: '/media/food/specials/csirkemell_steak_02.webp',
+    },
+    {
+        name: 'Tarja steak',
+        desc: 'Vadas mártás, zsemlegombóc',
+        image: '/media/food/specials/tarja_steak_vadasasn_01.webp',
+    },
+];
+</script>
+
 <template>
-  <section class="py-24 bg-[#111] relative border-t border-white/5">
-    <UContainer>
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-wider mb-4">Hét különlegességei</h2>
-        <div class="w-20 h-1 bg-primary mx-auto"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        
-        <div class="group cursor-pointer">
-          <div class="overflow-hidden relative aspect-[4/5] bg-black/50 border border-white/10">
-            <img src="/media/food/specials/steak.webp" alt="Bélszín steak" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 w-full p-6 text-left">
-              <h3 class="text-xl font-bold text-primary uppercase tracking-wider mb-2">Bélszín steak</h3>
-              <p class="text-gray-300 text-sm">Burgonyapüré, grillezett zöldségek</p>
+    <section class="py-24 bg-default relative border-t border-default">
+        <UContainer>
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-black text-default tracking-wider mb-6">A hét különlegességei</h2>
+                <UButton
+                    to="/etlap"
+                    color="primary"
+                    variant="outline"
+                    class="rounded-full uppercase tracking-widest px-6"
+                >
+                    Specialitásaink
+                </UButton>
             </div>
-          </div>
-        </div>
 
-        <div class="group cursor-pointer">
-          <div class="overflow-hidden relative aspect-[4/5] bg-black/50 border border-white/10">
-            <img src="/media/food/burgerek.webp" alt="Sieger malacos krumpli" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 w-full p-6 text-left">
-              <h3 class="text-xl font-bold text-primary uppercase tracking-wider mb-2">Sieger malacos krumpli</h3>
-              <p class="text-gray-300 text-sm">Hasábburgonya, pulled pork, cheddar sajt</p>
+            <!-- Checkerboard grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4">
+                <!-- Row 1 -->
+                <div
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                >
+                    <div>
+                        <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[0].name }}</h3>
+                        <p class="text-xs md:text-sm text-muted">{{ specials[0].desc }}</p>
+                    </div>
+                    <UButton
+                        to="/etlap"
+                        color="primary"
+                        variant="ghost"
+                        size="sm"
+                        class="uppercase tracking-widest"
+                    >
+                        Teljes étlap
+                    </UButton>
+                </div>
+
+                <div class="aspect-square overflow-hidden">
+                    <img
+                        :src="specials[0].image"
+                        :alt="specials[0].name"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+
+                <div
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                >
+                    <div>
+                        <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[1].name }}</h3>
+                        <p class="text-xs md:text-sm text-muted">{{ specials[1].desc }}</p>
+                    </div>
+                    <UButton
+                        to="/etlap"
+                        color="primary"
+                        variant="ghost"
+                        size="sm"
+                        class="uppercase tracking-widest"
+                    >
+                        Teljes étlap
+                    </UButton>
+                </div>
+
+                <div class="aspect-square overflow-hidden">
+                    <img
+                        :src="specials[1].image"
+                        :alt="specials[1].name"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+
+                <!-- Row 2 -->
+                <div class="aspect-square overflow-hidden">
+                    <img
+                        :src="specials[2].image"
+                        :alt="specials[2].name"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+
+                <div
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                >
+                    <div>
+                        <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[2].name }}</h3>
+                        <p class="text-xs md:text-sm text-muted">{{ specials[2].desc }}</p>
+                    </div>
+                    <UButton
+                        to="/etlap"
+                        color="primary"
+                        variant="ghost"
+                        size="sm"
+                        class="uppercase tracking-widest"
+                    >
+                        Teljes étlap
+                    </UButton>
+                </div>
+
+                <div class="aspect-square overflow-hidden">
+                    <img
+                        :src="specials[3].image"
+                        :alt="specials[3].name"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+
+                <div
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                >
+                    <div>
+                        <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[3].name }}</h3>
+                        <p class="text-xs md:text-sm text-muted">{{ specials[3].desc }}</p>
+                    </div>
+                    <UButton
+                        to="/etlap"
+                        color="primary"
+                        variant="ghost"
+                        size="sm"
+                        class="uppercase tracking-widest"
+                    >
+                        Teljes étlap
+                    </UButton>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="group cursor-pointer">
-          <div class="overflow-hidden relative aspect-[4/5] bg-black/50 border border-white/10">
-            <img src="/media/food/specials/csirkemell_steak_02.webp" alt="Csirkemell steak" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 w-full p-6 text-left">
-              <h3 class="text-xl font-bold text-primary uppercase tracking-wider mb-2">Csirkemell steak</h3>
-              <p class="text-gray-300 text-sm">Édesburgonya püré</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="group cursor-pointer">
-          <div class="overflow-hidden relative aspect-[4/5] bg-black/50 border border-white/10">
-            <img src="/media/food/specials/tarja_steak_vadasasn_01.webp" alt="Tarja steak" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 w-full p-6 text-left">
-              <h3 class="text-xl font-bold text-primary uppercase tracking-wider mb-2">Tarja steak</h3>
-              <p class="text-gray-300 text-sm">Vadas mártás, zsemlegombóc</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-16 text-center">
-        <UButton to="#menu" color="primary" variant="outline" size="xl" class="uppercase tracking-widest font-bold px-10">
-          {{ $t('buttons.full_menu') }}
-        </UButton>
-      </div>
-    </UContainer>
-  </section>
+        </UContainer>
+    </section>
 </template>
