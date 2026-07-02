@@ -44,6 +44,50 @@
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
                 />
             </div>
+
+            <!-- Second row -->
+            <div class="overflow-hidden group relative aspect-square">
+                <img
+                    src="/media/gallery/20231030_andras_05.webp"
+                    alt="Gallery Image"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                />
+            </div>
+            <div class="overflow-hidden group relative aspect-square">
+                <img
+                    src="/media/gallery/dsc00521.webp"
+                    alt="Gallery Image"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                />
+            </div>
+            <div class="overflow-hidden group relative aspect-square hidden md:block">
+                <img
+                    src="/media/interior/sze_sieger_bl_donto35_majer_csaba_jozsef.webp"
+                    alt="Gallery Image"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                />
+            </div>
+            <div class="overflow-hidden group relative aspect-square hidden md:block">
+                <img
+                    src="/media/food/specials/csirkemell_steak_02.webp"
+                    alt="Gallery Image"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                />
+            </div>
+            <div class="overflow-hidden group relative aspect-square hidden lg:block">
+                <img
+                    src="/media/food/specials/tarja_steak_vadasasn_01.webp"
+                    alt="Gallery Image"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                />
+            </div>
+            <div class="overflow-hidden group relative aspect-square hidden lg:block">
+                <img
+                    src="/media/drinks/specials/img_5298.webp"
+                    alt="Gallery Image"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100"
+                />
+            </div>
         </div>
     </section>
 </template>

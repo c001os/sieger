@@ -21,7 +21,7 @@ const downloads = [
         file: '/documents/sieger_chef_ajanlata_a4.pdf',
     },
     {
-        title: 'Deli félidő',
+        title: 'Déli Félidő',
         description: 'Könnyedebb falatok és ínyencségek a meccsek mellé.',
         file: '/documents/sieger_deli_felido_01_19.pdf',
     },
@@ -31,32 +31,7 @@ function text(obj) {
     return obj?.[locale.value] || obj?.hu || '';
 }
 
-const categoryImageMap = {
-    Leves: '/media/food/etel/Leves.jpg',
-    Főétel: '/media/food/etel/Főétel.JPG',
-    Burgerek: '/media/food/etel/Burgerek.jpg',
-    Desszertek: '/media/food/etel/Desszert.jpg',
-};
-
-const categoriesWithMeta = computed(() => {
-    if (!menu.value) return [];
-
-    let imageIndex = 0;
-    return menu.value.categories.map((category) => {
-        const image = categoryImageMap[category.hu] || null;
-        const imageSide = image ? (imageIndex % 2 === 0 ? 'right' : 'left') : null;
-
-        if (image) {
-            imageIndex++;
-        }
-
-        return {
-            ...category,
-            image,
-            imageSide,
-        };
-    });
-});
+const categories = computed(() => menu.value?.categories ?? []);
 </script>
 
 <template>
@@ -99,48 +74,16 @@ const categoriesWithMeta = computed(() => {
                     </div>
 
                     <div class="space-y-8">
-                        <template
-                            v-for="category in categoriesWithMeta"
+                        <div
+                            v-for="category in categories"
                             :key="category.hu"
+                            class="bg-elevated border border-default rounded-lg p-6 md:p-8"
                         >
-                            <!-- Category without image -->
-                            <div
-                                v-if="!category.image"
-                                class="bg-elevated border border-default rounded-lg p-6 md:p-8"
-                            >
-                                <MenuCategory
-                                    :title="text(category)"
-                                    :items="category.items"
-                                />
-                            </div>
-
-                            <!-- Category with image in chessboard layout -->
-                            <div
-                                v-else
-                                class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg overflow-hidden border border-default"
-                            >
-                                <div
-                                    class="bg-elevated p-6 md:p-8 flex flex-col justify-center"
-                                    :class="category.imageSide === 'left' ? 'md:order-2' : 'md:order-1'"
-                                >
-                                    <MenuCategory
-                                        :title="text(category)"
-                                        :items="category.items"
-                                    />
-                                </div>
-
-                                <div
-                                    class="aspect-[4/3] md:aspect-auto overflow-hidden"
-                                    :class="category.imageSide === 'left' ? 'md:order-1' : 'md:order-2'"
-                                >
-                                    <img
-                                        :src="category.image"
-                                        :alt="text(category)"
-                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                                    />
-                                </div>
-                            </div>
-                        </template>
+                            <MenuCategory
+                                :title="text(category)"
+                                :items="category.items"
+                            />
+                        </div>
                     </div>
                 </template>
             </UContainer>
