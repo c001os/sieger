@@ -30,10 +30,29 @@
                     class="hover:text-primary transition-colors"
                     >{{ $t('nav.specials') }}</NuxtLink
                 >
+                <UDropdownMenu
+                    :items="offerItems"
+                    :popper="{ placement: 'bottom-start' }"
+                >
+                    <button
+                        class="hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-widest"
+                    >
+                        {{ $t('nav.food_menu') }}
+                        <UIcon
+                            name="i-lucide-chevron-down"
+                            class="w-4 h-4"
+                        />
+                    </button>
+                </UDropdownMenu>
                 <NuxtLink
-                    :to="localePath('/etlap')"
+                    :to="localePath('/itallap')"
                     class="hover:text-primary transition-colors"
-                    >{{ $t('nav.food_menu') }}</NuxtLink
+                    >{{ $t('nav.drinks_menu') }}</NuxtLink
+                >
+                <NuxtLink
+                    :to="localePath('/esemenyek')"
+                    class="hover:text-primary transition-colors"
+                    >{{ $t('nav.events') }}</NuxtLink
                 >
                 <NuxtLink
                     :to="localePath('/#gallery')"
@@ -50,9 +69,10 @@
                         target="_blank"
                         class="text-muted hover:text-primary transition-all duration-300 transform hover:scale-110"
                     >
-                        <UIcon
-                            name="i-lucide-facebook"
-                            class="w-5 h-5"
+                        <img
+                            src="/ikonok/facebook_ikon_feher.png"
+                            alt="Facebook"
+                            class="w-5 h-5 object-contain"
                         />
                     </NuxtLink>
                     <NuxtLink
@@ -60,18 +80,15 @@
                         target="_blank"
                         class="text-muted hover:text-primary transition-all duration-300 transform hover:scale-110"
                     >
-                        <UIcon
-                            name="i-lucide-instagram"
-                            class="w-5 h-5"
+                        <img
+                            src="/ikonok/instagram_ikon_feher.png"
+                            alt="Instagram"
+                            class="w-5 h-5 object-contain"
                         />
                     </NuxtLink>
                 </div>
                 <div class="h-6 w-px bg-muted hidden md:block" />
                 <LangSwitcher />
-                <UColorModeButton
-                    color="neutral"
-                    variant="ghost"
-                />
 
                 <!-- Mobile Menu Toggle -->
                 <UButton
@@ -108,11 +125,59 @@
                     class="hover:text-primary transition-colors"
                     >{{ $t('nav.specials') }}</NuxtLink
                 >
+                <div class="flex flex-col items-center gap-4">
+                    <button
+                        @click="isOffersOpen = !isOffersOpen"
+                        class="hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-widest"
+                    >
+                        {{ $t('nav.food_menu') }}
+                        <UIcon
+                            name="i-lucide-chevron-down"
+                            class="w-5 h-5 transition-transform"
+                            :class="{ 'rotate-180': isOffersOpen }"
+                        />
+                    </button>
+                    <div
+                        v-if="isOffersOpen"
+                        class="flex flex-col items-center gap-4 text-base"
+                    >
+                        <NuxtLink
+                            :to="localePath('/etlap')"
+                            @click="isMenuOpen = false"
+                            class="hover:text-primary transition-colors"
+                            >{{ $t('nav.offers.food_menu') }}</NuxtLink
+                        >
+                        <NuxtLink
+                            :to="localePath('/kezdo-11')"
+                            @click="isMenuOpen = false"
+                            class="hover:text-primary transition-colors"
+                            >{{ $t('nav.offers.starting11') }}</NuxtLink
+                        >
+                        <NuxtLink
+                            :to="localePath('/deli-felido')"
+                            @click="isMenuOpen = false"
+                            class="hover:text-primary transition-colors"
+                            >{{ $t('nav.offers.deli') }}</NuxtLink
+                        >
+                        <NuxtLink
+                            :to="localePath('/chef-ajanlata')"
+                            @click="isMenuOpen = false"
+                            class="hover:text-primary transition-colors"
+                            >{{ $t('nav.offers.chef') }}</NuxtLink
+                        >
+                    </div>
+                </div>
                 <NuxtLink
-                    :to="localePath('/etlap')"
+                    :to="localePath('/itallap')"
                     @click="isMenuOpen = false"
                     class="hover:text-primary transition-colors"
-                    >{{ $t('nav.food_menu') }}</NuxtLink
+                    >{{ $t('nav.drinks_menu') }}</NuxtLink
+                >
+                <NuxtLink
+                    :to="localePath('/esemenyek')"
+                    @click="isMenuOpen = false"
+                    class="hover:text-primary transition-colors"
+                    >{{ $t('nav.events') }}</NuxtLink
                 >
                 <NuxtLink
                     :to="localePath('/#gallery')"
@@ -127,9 +192,10 @@
                     target="_blank"
                     class="text-muted hover:text-primary transition-all duration-300 transform hover:scale-110"
                 >
-                    <UIcon
-                        name="i-lucide-facebook"
-                        class="w-8 h-8"
+                    <img
+                        src="/ikonok/facebook_ikon_feher.png"
+                        alt="Facebook"
+                        class="w-8 h-8 object-contain"
                     />
                 </NuxtLink>
                 <NuxtLink
@@ -137,9 +203,10 @@
                     target="_blank"
                     class="text-muted hover:text-primary transition-all duration-300 transform hover:scale-110"
                 >
-                    <UIcon
-                        name="i-lucide-instagram"
-                        class="w-8 h-8"
+                    <img
+                        src="/ikonok/instagram_ikon_feher.png"
+                        alt="Instagram"
+                        class="w-8 h-8 object-contain"
                     />
                 </NuxtLink>
             </div>
@@ -149,7 +216,16 @@
 
 <script setup>
 const localePath = useLocalePath();
+const { t } = useI18n();
 const isMenuOpen = ref(false);
+const isOffersOpen = ref(false);
+
+const offerItems = computed(() => [
+    { label: t('nav.offers.food_menu'), to: localePath('/etlap') },
+    { label: t('nav.offers.starting11'), to: localePath('/kezdo-11') },
+    { label: t('nav.offers.deli'), to: localePath('/deli-felido') },
+    { label: t('nav.offers.chef'), to: localePath('/chef-ajanlata') },
+]);
 
 // Close menu when route changes
 const route = useRoute();
@@ -157,6 +233,7 @@ watch(
     () => route.fullPath,
     () => {
         isMenuOpen.value = false;
+        isOffersOpen.value = false;
     },
 );
 </script>

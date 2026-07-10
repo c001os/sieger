@@ -18,8 +18,8 @@
                 >
                     <div class="flex items-center justify-between gap-3 md:gap-6">
                         <!-- Home team -->
-                        <div class="flex items-center gap-2 md:gap-3 flex-1 justify-end">
-                            <span class="text-default font-bold text-sm md:text-xl text-right leading-tight">
+                        <div class="flex items-center gap-2 md:gap-3 w-[42%] justify-end">
+                            <span class="text-default font-bold text-sm md:text-xl text-right leading-tight truncate">
                                 {{ match.team1.name }}
                             </span>
                             <span
@@ -29,7 +29,7 @@
                         </div>
 
                         <!-- Center time & date -->
-                        <div class="flex flex-col items-center px-2 md:px-4 min-w-[5.5rem] md:min-w-[7rem]">
+                        <div class="flex flex-col items-center w-[16%] min-w-[5.5rem] md:min-w-[7rem] px-2 md:px-4">
                             <span class="text-default font-black text-lg md:text-2xl tracking-wide">
                                 {{ match.time }}
                             </span>
@@ -39,12 +39,12 @@
                         </div>
 
                         <!-- Away team -->
-                        <div class="flex items-center gap-2 md:gap-3 flex-1">
+                        <div class="flex items-center gap-2 md:gap-3 w-[42%] justify-start">
                             <span
                                 class="w-1 md:w-1.5 h-6 md:h-8 rounded-full flex-shrink-0"
                                 :style="{ backgroundColor: match.team2.color }"
                             ></span>
-                            <span class="text-default font-bold text-sm md:text-xl leading-tight">
+                            <span class="text-default font-bold text-sm md:text-xl leading-tight truncate">
                                 {{ match.team2.name }}
                             </span>
                         </div>

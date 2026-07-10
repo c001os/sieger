@@ -4,6 +4,8 @@
         <main class="pt-20">
             <slot />
         </main>
+        <SectionsMapSection />
         <AppFooter />
+        <ScrollToTop />
     </div>
 </template>

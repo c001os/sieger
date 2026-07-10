@@ -15,9 +15,15 @@ const isOpen = defineModel('open', { default: false });
                     color="primary"
                     variant="solid"
                     size="lg"
-                    icon="i-lucide-phone"
                     class="w-full justify-center"
                 >
+                    <template #leading>
+                        <img
+                            src="/ikonok/telefon_ikon_feher.png"
+                            alt="Telefon"
+                            class="w-5 h-5 object-contain"
+                        />
+                    </template>
                     +36 20 615 6491
                 </UButton>
 

@@ -17,27 +17,30 @@
                     <h3 class="text-lg font-bold text-primary uppercase tracking-wider">{{ $t('footer.contact') }}</h3>
                     <div class="flex flex-col items-center md:items-start gap-2 text-sm text-default">
                         <span class="flex items-center gap-2"
-                            ><UIcon
-                                name="i-lucide-map-pin"
-                                class="text-primary w-4 h-4"
+                            ><img
+                                src="/ikonok/lokacio_ikon_korben_feher.png"
+                                alt="Cím"
+                                class="w-4 h-4 object-contain"
                             />
                             9026 Győr, Egyetem tér 1.</span
                         >
                         <a
                             href="mailto:info@sieger.hu"
                             class="flex items-center gap-2 hover:text-primary transition-colors"
-                            ><UIcon
-                                name="i-lucide-mail"
-                                class="text-primary w-4 h-4"
+                            ><img
+                                src="/ikonok/email_ikon_feher.png"
+                                alt="Email"
+                                class="w-4 h-4 object-contain"
                             />
                             info@sieger.hu</a
                         >
                         <a
                             href="tel:+36206156491"
                             class="flex items-center gap-2 hover:text-primary transition-colors"
-                            ><UIcon
-                                name="i-lucide-phone"
-                                class="text-primary w-4 h-4"
+                            ><img
+                                src="/ikonok/telefon_ikon_feher.png"
+                                alt="Telefon"
+                                class="w-4 h-4 object-contain"
                             />
                             +36 20 615 6491</a
                         >
@@ -83,9 +86,10 @@
                                 target="_blank"
                                 class="text-muted hover:text-primary transition-colors"
                             >
-                                <UIcon
-                                    name="i-lucide-facebook"
-                                    class="w-6 h-6"
+                                <img
+                                    src="/ikonok/facebook_ikon_feher.png"
+                                    alt="Facebook"
+                                    class="w-6 h-6 object-contain"
                                 />
                             </NuxtLink>
                             <NuxtLink
@@ -93,9 +97,10 @@
                                 target="_blank"
                                 class="text-muted hover:text-primary transition-colors"
                             >
-                                <UIcon
-                                    name="i-lucide-instagram"
-                                    class="w-6 h-6"
+                                <img
+                                    src="/ikonok/instagram_ikon_feher.png"
+                                    alt="Instagram"
+                                    class="w-6 h-6 object-contain"
                                 />
                             </NuxtLink>
                         </div>

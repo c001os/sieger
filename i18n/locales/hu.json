@@ -4,19 +4,30 @@
     "delivery": "Kiszállítás",
     "about": "A Sieger",
     "specials": "Specialitások",
-    "food_menu": "Étlap",
+    "food_menu": "Ajánlatunk",
     "drinks_menu": "Itallap",
-    "gallery": "Galéria"
+    "events": "Események",
+    "gallery": "Galéria",
+    "offers": {
+      "food_menu": "Étlap",
+      "starting11": "Kezdő 11",
+      "deli": "Déli félidő",
+      "chef": "Chef ajánlata"
+    }
   },
   "hero": {
     "subtitle": "ÉTTEREM · BÁR · SPORT · SZABADIDŐ",
     "welcome": "Üdvözöl a Sieger Sport Bár!"
   },
   "about": {
-    "title": "Bemutatkozás",
-    "slogan1": "Élvezz ki mindent a maga idejében!",
-    "slogan2": "Sportélmény, magyar és nemzetközi étel különlegességek egy helyen.",
-    "description": "Győr legnépszerűbb sport bárja Téged is vár szeretettel. Légy vendégünk egy finom ebédre vagy vacsorára! Szurkolj nálunk kedvenc csapatodnak a következő meccsen!"
+    "title": "Sportélmény, magyar és nemzetközi étel különlegességek egy helyen.",
+    "description": "Győr legnépszerűbb sport bárja Téged is vár szeretettel. Légy vendégünk egy finom ebédre vagy vacsorára! Szurkolj nálunk kedvenc csapatodnak a következő meccsen!",
+    "features": {
+      "premium_food_drink": "Prémium étel- és italkínálat",
+      "vip_room": "VIP terem",
+      "screens_boxes": "Nagy képernyők és kényelmes boxok",
+      "live_matches": "Élő meccsek és hangulat"
+    }
   },
   "buttons": {
     "book_table": "Asztalfoglalás",

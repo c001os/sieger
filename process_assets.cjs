@@ -113,5 +113,10 @@ copyFiles(
     'public/documents',
     /itallap.*\.pdf$/i,
 );
+copyFiles(
+    'lead/wetransfer_sieger_weboldal_modositasok-pdf_2026-06-17_1044',
+    'public/documents',
+    /etlap.*\.pdf$/i,
+);
 
 console.log('Asset processing complete.');

@@ -4,19 +4,30 @@
     "delivery": "Lieferung",
     "about": "Über Sieger",
     "specials": "Spezialitäten",
-    "food_menu": "Speisekarte",
+    "food_menu": "Unser Angebot",
     "drinks_menu": "Getränkekarte",
-    "gallery": "Galerie"
+    "events": "Veranstaltungen",
+    "gallery": "Galerie",
+    "offers": {
+      "food_menu": "Speisekarte",
+      "starting11": "Startelf",
+      "deli": "Halbzeit",
+      "chef": "Empfehlung des Küchenchefs"
+    }
   },
   "hero": {
     "subtitle": "RESTAURANT · BAR · SPORT · FREIZEIT",
     "welcome": "Willkommen in der Sieger Sport Bar!"
   },
   "about": {
-    "title": "Über uns",
-    "slogan1": "Genieße alles zu seiner Zeit!",
-    "slogan2": "Sporterlebnis, ungarische und internationale Spezialitäten an einem Ort.",
-    "description": "Die beliebteste Sportbar in Győr wartet auf dich. Sei unser Gast für ein leckeres Mittag- oder Abendessen! Feuere dein Lieblingsteam beim nächsten Spiel an!"
+    "title": "Sporterlebnis, ungarische und internationale Spezialitäten an einem Ort.",
+    "description": "Die beliebteste Sportbar in Győr wartet auf dich. Sei unser Gast für ein leckeres Mittag- oder Abendessen! Feuere dein Lieblingsteam beim nächsten Spiel an!",
+    "features": {
+      "premium_food_drink": "Premium Essens- und Getränkeauswahl",
+      "vip_room": "VIP-Raum",
+      "screens_boxes": "Große Bildschirme und komfortable Boxen",
+      "live_matches": "Live-Spiele und Atmosphäre"
+    }
   },
   "buttons": {
     "book_table": "Tisch reservieren",

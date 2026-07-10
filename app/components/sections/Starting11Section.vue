@@ -44,7 +44,7 @@ const starters = [
         price: '2 490 Ft',
         logo: teamLogos.l60,
         foodImage: foodImages.img25,
-        position: { top: '6%', left: '50%' },
+        position: { top: '8%', left: '50%' },
     },
     {
         name: { hu: 'Kamra ízelítő', en: 'Pantry Platter', de: 'Vorspeisenplatte' },
@@ -56,7 +56,7 @@ const starters = [
         price: '3 490 Ft',
         logo: teamLogos.l70,
         foodImage: foodImages.img27,
-        position: { top: '22%', left: '18%' },
+        position: { top: '22%', left: '20%' },
     },
     {
         name: { hu: 'Tatár beef steak', en: 'Beef Tartare', de: 'Beef Tatar' },
@@ -68,7 +68,7 @@ const starters = [
         price: '5 790 Ft',
         logo: teamLogos.l80,
         foodImage: foodImages.img30,
-        position: { top: '22%', left: '39%' },
+        position: { top: '22%', left: '80%' },
     },
     {
         name: { hu: 'Sieger burger', en: 'Sieger Burger', de: 'Sieger Burger' },
@@ -80,7 +80,7 @@ const starters = [
         price: '4 990 Ft',
         logo: teamLogos.l90,
         foodImage: foodImages.img31,
-        position: { top: '22%', left: '61%' },
+        position: { top: '36%', left: '15%' },
     },
     {
         name: { hu: 'BBQ spare ribs', en: 'BBQ Spare Ribs', de: 'BBQ Spareribs' },
@@ -92,7 +92,7 @@ const starters = [
         price: '5 990 Ft',
         logo: teamLogos.l100,
         foodImage: foodImages.img32,
-        position: { top: '22%', left: '82%' },
+        position: { top: '36%', left: '50%' },
     },
     {
         name: { hu: 'Kacsacomb', en: 'Duck Leg', de: 'Entenkeule' },
@@ -104,7 +104,7 @@ const starters = [
         price: '5 490 Ft',
         logo: teamLogos.l110,
         foodImage: foodImages.img43,
-        position: { top: '45%', left: '15%' },
+        position: { top: '36%', left: '85%' },
     },
     {
         name: { hu: 'BBQ csirkeszárnyak', en: 'BBQ Chicken Wings', de: 'BBQ Chicken Wings' },
@@ -116,7 +116,7 @@ const starters = [
         price: '4 190 Ft',
         logo: teamLogos.l120,
         foodImage: foodImages.malacos,
-        position: { top: '45%', left: '38%' },
+        position: { top: '52%', left: '12%' },
     },
     {
         name: { hu: 'Pulled pork szendvics', en: 'Pulled Pork Sandwich', de: 'Pulled-Pork-Sandwich' },
@@ -128,7 +128,7 @@ const starters = [
         price: '4 490 Ft',
         logo: teamLogos.l130,
         foodImage: foodImages.img25,
-        position: { top: '45%', left: '62%' },
+        position: { top: '52%', left: '38%' },
     },
     {
         name: { hu: 'Mézes-chilis lazac', en: 'Honey-Chili Salmon', de: 'Honig-Chili-Lachs' },
@@ -140,7 +140,7 @@ const starters = [
         price: '4 990 Ft',
         logo: teamLogos.l140,
         foodImage: foodImages.img27,
-        position: { top: '45%', left: '85%' },
+        position: { top: '52%', left: '62%' },
     },
     {
         name: { hu: 'Chilis bab + nachos', en: 'Chili con Carne', de: 'Chili con Carne' },
@@ -152,7 +152,7 @@ const starters = [
         price: '3 990 Ft',
         logo: teamLogos.l150,
         foodImage: foodImages.img30,
-        position: { top: '72%', left: '32%' },
+        position: { top: '52%', left: '88%' },
     },
     {
         name: { hu: '„Malacos krumpli”', en: 'Sieger Pulled Pork Potatoes', de: 'Sieger Spanferkel-Kartoffeln' },
@@ -164,7 +164,7 @@ const starters = [
         price: '4 490 Ft',
         logo: teamLogos.l160,
         foodImage: foodImages.malacos,
-        position: { top: '72%', left: '68%' },
+        position: { top: '76%', left: '50%' },
     },
 ];
 
@@ -216,20 +216,20 @@ const substitutes = [
 ];
 
 const allergens = [
-    { code: '1', hu: 'Glutén', en: 'Gluten', de: 'Gluten' },
-    { code: '2', hu: 'Rákfélék', en: 'Crustaceans', de: 'Krebstiere' },
-    { code: '3', hu: 'Tojás', en: 'Eggs', de: 'Eier' },
-    { code: '4', hu: 'Hal', en: 'Fish', de: 'Fisch' },
-    { code: '5', hu: 'Földimogyoró', en: 'Peanuts', de: 'Erdnüsse' },
-    { code: '6', hu: 'Szójabab', en: 'Soybeans', de: 'Sojabohnen' },
-    { code: '7', hu: 'Tej', en: 'Milk', de: 'Milch' },
-    { code: '8', hu: 'Diófélék', en: 'Nuts', de: 'Schalenfrüchte' },
-    { code: '9', hu: 'Zeller', en: 'Celery', de: 'Sellerie' },
-    { code: '10', hu: 'Mustár', en: 'Mustard', de: 'Senf' },
-    { code: '11', hu: 'Szezámmag', en: 'Sesame seeds', de: 'Sesamsamen' },
-    { code: '12', hu: 'Kén-dioxid', en: 'Sulphur dioxide', de: 'Schwefeldioxid' },
-    { code: '13', hu: 'Csillagfürt', en: 'Lupin', de: 'Lupine' },
-    { code: '14', hu: 'Puhatestűek', en: 'Molluscs', de: 'Weichtiere' },
+    { code: '1', hu: 'Glutént tartalmazó gabonafélék (Gluten)', en: 'Gluten', de: 'Gluten' },
+    { code: '2', hu: 'Rákfélék és a belőlük készült termékek (Crustaceans)', en: 'Crustaceans', de: 'Krebstiere' },
+    { code: '3', hu: 'Tojás és a belőle készült termékek (Egg)', en: 'Egg', de: 'Eier' },
+    { code: '4', hu: 'Hal és a belőle készült termékek (Fish)', en: 'Fish', de: 'Fisch' },
+    { code: '5', hu: 'Földimogyoró és a belőle készült termékek (Peanuts)', en: 'Peanuts', de: 'Erdnüsse' },
+    { code: '6', hu: 'Szójabab és a belőle készült termékek (Soya)', en: 'Soya', de: 'Sojabohnen' },
+    { code: '7', hu: 'Tej és az abból készült termékek (Milk)', en: 'Milk', de: 'Milch' },
+    { code: '8', hu: 'Diófélék, azaz mandula, mogyoró, dió, kesudió, brazil dió, pisztácia, makadámia vagy queenslandi dió és a belőle készült termékek (Nuts)', en: 'Nuts', de: 'Schalenfrüchte' },
+    { code: '9', hu: 'Zeller és a belőle készült termékek (Celery)', en: 'Celery', de: 'Sellerie' },
+    { code: '10', hu: 'Mustár és a belőle készült termékek (Mustard)', en: 'Mustard', de: 'Senf' },
+    { code: '11', hu: 'Szezámmag és a belőle készült termékek (Sesame)', en: 'Sesame', de: 'Sesamsamen' },
+    { code: '12', hu: 'Kén-dioxid és az SO2-ben kifejezett szulfitok 10 mg / kg, illetve 10 mg/ liter összekoncentrációt meghaladó mennyiségben (Sulphite)', en: 'Sulphite', de: 'Schwefeldioxid' },
+    { code: '13', hu: 'Csillagfürt és a belőle készült termékek (Lupin)', en: 'Lupin', de: 'Lupine' },
+    { code: '14', hu: 'Puhatestűek és a belőlük készült termékek (Molluscs)', en: 'Molluscs', de: 'Weichtiere' },
 ];
 </script>
 
@@ -249,7 +249,7 @@ const allergens = [
             </div>
 
             <!-- Desktop pitch layout -->
-            <div class="hidden md:block relative max-w-6xl mx-auto aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <div class="hidden md:block relative max-w-7xl mx-auto aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img
                     src="/media/starting11/backgrounds/kezdo_11_fooldal_hatter_fekvo.webp"
                     alt="Focipálya"
@@ -290,7 +290,7 @@ const allergens = [
 
             <!-- Substitutes -->
             <div
-                class="mt-16 md:mt-24 bg-[#0B1E33] border-y border-default/30 py-12 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 xl:-mx-12 xl:px-12"
+                class="mt-0 bg-[#0B1E33] border border-t-0 border-default/30 py-12 max-w-7xl mx-auto rounded-b-2xl rounded-t-none"
             >
                 <UContainer>
                     <div class="text-center mb-8">
@@ -301,7 +301,7 @@ const allergens = [
                             v-for="(item, index) in substitutes"
                             :key="index"
                             :item="item"
-                            :reverse="index % 2 === 1"
+                            :reverse="false"
                             :delay="index * 100"
                         />
                     </div>
@@ -309,7 +309,7 @@ const allergens = [
             </div>
 
             <!-- Allergens -->
-            <div class="mt-16 md:mt-24 max-w-4xl mx-auto">
+            <div class="mt-16 md:mt-24 max-w-7xl mx-auto">
                 <div class="text-center mb-8">
                     <h3 class="text-2xl md:text-3xl font-black text-default uppercase tracking-wider">Allergének</h3>
                 </div>
@@ -318,14 +318,14 @@ const allergens = [
                         <div
                             v-for="allergen in allergens"
                             :key="allergen.code"
-                            class="flex items-center gap-3 text-sm text-muted"
+                            class="flex items-start gap-3 text-sm text-muted"
                         >
                             <span
-                                class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold"
+                                class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5"
                             >
                                 {{ allergen.code }}
                             </span>
-                            <span>{{ text(allergen) }}</span>
+                            <span class="block">{{ text(allergen) }}</span>
                         </div>
                     </div>
                 </div>

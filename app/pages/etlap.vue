@@ -14,23 +14,7 @@ useHead({
 
 const { data: menu, pending, error } = await useFetch('/api/menu');
 
-const downloads = [
-    {
-        title: 'Chef ajánlata',
-        description: 'Szezonális ajánlatunk a séfünk különleges válogatásával.',
-        file: '/documents/sieger_chef_ajanlata_a4.pdf',
-    },
-    {
-        title: 'Déli Félidő',
-        description: 'Könnyedebb falatok és ínyencségek a meccsek mellé.',
-        file: '/documents/sieger_deli_felido_01_19.pdf',
-    },
-    {
-        title: 'Itallap',
-        description: 'Aktuális italválasztékunk PDF formátumban.',
-        file: '/documents/sieger_itallap_2026_weboldalra.pdf',
-    },
-];
+const foodMenuPdf = '/documents/sieger_etlap_2026_tavasz_weboldalra.pdf';
 
 function text(obj) {
     return obj?.[locale.value] || obj?.hu || '';
@@ -51,8 +35,43 @@ const categories = computed(() => menu.value?.categories ?? []);
             </UContainer>
         </section>
 
-        <!-- Online menu from XLSX -->
+        <!-- Downloadable food menu PDF -->
         <section class="py-24 bg-muted">
+            <UContainer>
+                <div class="max-w-5xl mx-auto space-y-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl md:text-4xl font-black text-default tracking-wider mb-4">
+                            Letölthető étlap
+                        </h2>
+                        <p class="text-muted max-w-2xl mx-auto">
+                            Tekintsd meg aktuális étlapunkat böngészőben, vagy töltsd le PDF formátumban.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <PdfModalButton
+                            :file="foodMenuPdf"
+                            title="Sieger étlap"
+                            button-label="Étlap megtekintése"
+                        />
+                        <UButton
+                            :to="foodMenuPdf"
+                            download
+                            color="primary"
+                            variant="solid"
+                            size="lg"
+                            icon="i-lucide-download"
+                            class="uppercase tracking-widest justify-center"
+                        >
+                            Étlap letöltése
+                        </UButton>
+                    </div>
+                </div>
+            </UContainer>
+        </section>
+
+        <!-- Online menu from XLSX -->
+        <section class="py-24 bg-default border-t border-default">
             <UContainer>
                 <div
                     v-if="pending"
@@ -94,48 +113,6 @@ const categories = computed(() => menu.value?.categories ?? []);
             </UContainer>
         </section>
 
-        <!-- Downloadable PDFs -->
-        <section class="py-24 bg-default border-t border-default">
-            <UContainer>
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-black text-default tracking-wider mb-4">
-                        Letölthető ajánlatok
-                    </h2>
-                    <p class="text-muted max-w-2xl mx-auto">Az alábbi PDF-eket letöltheted és elmentheted.</p>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div
-                        v-for="menuFile in downloads"
-                        :key="menuFile.file"
-                        class="bg-elevated border border-default rounded-lg p-8 md:p-10 flex flex-col items-center text-center gap-6 hover:border-primary transition-colors"
-                    >
-                        <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                            <UIcon
-                                name="i-lucide-file-text"
-                                class="w-10 h-10 text-primary"
-                            />
-                        </div>
-
-                        <div>
-                            <h3 class="text-2xl font-bold text-default mb-2">{{ menuFile.title }}</h3>
-                            <p class="text-sm text-muted">{{ menuFile.description }}</p>
-                        </div>
-
-                        <UButton
-                            :to="menuFile.file"
-                            download
-                            color="primary"
-                            variant="outline"
-                            size="lg"
-                            icon="i-lucide-download"
-                            class="uppercase tracking-widest w-full justify-center"
-                        >
-                            Letöltés
-                        </UButton>
-                    </div>
-                </div>
-            </UContainer>
-        </section>
     </div>
 </template>

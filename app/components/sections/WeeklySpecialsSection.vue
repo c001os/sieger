@@ -28,7 +28,7 @@ const specials = [
         <UContainer>
             <!-- Header -->
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-5xl font-black text-default tracking-wider mb-6">A hét különlegességei</h2>
+                <h2 class="text-3xl md:text-5xl font-black text-default tracking-wider mb-6">Chef ajánlata</h2>
                 <UButton
                     to="/etlap"
                     color="primary"
