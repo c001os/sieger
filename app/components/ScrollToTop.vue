@@ -3,7 +3,7 @@
         v-show="visible"
         @click="scrollToTop"
         class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-primary text-inverted shadow-lg hover:bg-primary/90 transition-all duration-300"
-        aria-label="Ugrás az oldal tetejére"
+        :aria-label="$t('common.scroll_to_top')"
     >
         <UIcon name="i-lucide-chevron-up" class="w-6 h-6" />
     </button>

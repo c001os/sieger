@@ -33,6 +33,112 @@
     "book_table": "Asztalfoglalás",
     "full_menu": "Teljes étlap"
   },
+  "common": {
+    "view": "Megtekintés",
+    "download": "Letöltés",
+    "scroll_to_top": "Ugrás az oldal tetejére"
+  },
+  "pdf": {
+    "no_preview_1": "Ha az előnézet nem jelenik meg,",
+    "open_new_tab": "nyisd meg új lapon",
+    "no_preview_2": ", vagy töltsd le a PDF-et."
+  },
+  "booking": {
+    "title": "Asztalfoglalás",
+    "description": "Válassz egy lehetőséget az asztalfoglaláshoz.",
+    "online": "Online asztalfoglalás"
+  },
+  "pages": {
+    "home": {
+      "title": "Sieger Sport Bár - Győr",
+      "description": "Élvezz ki mindent a maga idejében! Sportélmény, magyar és nemzetközi étel különlegességek egy helyen."
+    },
+    "etlap": {
+      "title": "Étlapok – Sieger Sport Bár",
+      "description": "Töltsd le aktuális étlapjainkat és ajánlatainkat PDF formátumban, vagy böngéssz az online étlapunk között.",
+      "heading": "Étlapok",
+      "lead": "Böngéssz aktuális online étlapunkban, vagy töltsd le ajánlatainkat PDF formátumban.",
+      "download_title": "Letölthető étlap",
+      "download_lead": "Tekintsd meg aktuális étlapunkat böngészőben, vagy töltsd le PDF formátumban.",
+      "view_button": "Étlap megtekintése",
+      "download_button": "Étlap letöltése",
+      "pdf_title": "Sieger étlap",
+      "error": "Hiba történt az étlap betöltése közben."
+    },
+    "itallap": {
+      "title": "Itallap – Sieger Sport Bár",
+      "description": "Böngéssz aktuális itallapunkban, vagy töltsd le PDF formátumban.",
+      "heading": "Itallap",
+      "card_description": "Aktuális italválasztékunk PDF formátumban."
+    },
+    "esemenyek": {
+      "title": "Események – Sieger Sport Bár",
+      "description": "Kövesd nyomon aktuális ajánlatainkat és közelgő sporteseményeinket a Sieger Sport Bárban!",
+      "heading": "Események",
+      "lead": "Kövesd nyomon aktuális ajánlatainkat és közelgő sporteseményeinket! Ne maradj le a legjobb meccsekről!",
+      "more_coming": "További események hamarosan érkeznek. Kövess minket közösségi oldalainkon, hogy első kézből értesülj a közelgő programjainkról!",
+      "button_labels": {
+        "itallap": "Itallap",
+        "etlap": "Étlap",
+        "info": "További információ",
+        "reszletek": "Részletek"
+      }
+    },
+    "starting11": {
+      "title": "Kezdő 11 – Sieger Sport Bár",
+      "description": "Válogass a bajnokoknak kijáró fogások közül! Kézműves burgerek és különlegességek, egyedi felállásban."
+    },
+    "chef": {
+      "title": "Chef ajánlata – Sieger Sport Bár",
+      "description": "Tekintsd meg séfünk szezonális ajánlatát, vagy töltsd le PDF formátumban.",
+      "heading": "Chef ajánlata",
+      "lead": "Szezonális ajánlatunk a séfünk különleges válogatásával. Böngéssz böngészőben, vagy töltsd le PDF formátumban."
+    },
+    "deli": {
+      "title": "Déli félidő – Sieger Sport Bár",
+      "description": "Tekintsd meg aktuális heti menü ajánlatunkat a Sieger Sport Bárban.",
+      "heading": "Déli félidő",
+      "lead": "Aktuális heti menü ajánlatunk, amely az egész hétre egységesen érvényes.",
+      "menu_title": "Heti menü",
+      "all_week": "Egész héten"
+    }
+  },
+  "sections": {
+    "specials": {
+      "title": "Chef ajánlata",
+      "button": "Specialitásaink"
+    },
+    "drink_specials": {
+      "title_top": "Ital",
+      "title_bottom": "Specialitások",
+      "lead": "Signature italok egyenesen a pultból, kizárólag a Sieger kínálatában.",
+      "cocktails_top": "Frissítő",
+      "cocktails_bottom": "Koktélok",
+      "cocktails_desc": "Tökéletes választás a meccsek mellé.",
+      "spirits_top": "Prémium",
+      "spirits_bottom": "Párlatok",
+      "spirits_desc": "Kiváló minőségű röviditalok széles választéka.",
+      "more_title": "További italok",
+      "image_alt": "Italspecialitás {n}"
+    },
+    "starting11": {
+      "title": "Kezdő 11-es ajánlatunk",
+      "intro": "Válogass a bajnokoknak kijáró fogások közül! Kézműves burgerek és különlegességek, egyedi felállásban. Húzd az egeret a csapatlogók fölé, és nézd meg, melyik étellel játszanak!",
+      "pitch_alt": "Focipálya",
+      "substitutes": "Cserék",
+      "allergens": "Allergének"
+    },
+    "matches": {
+      "title": "Meccslista",
+      "description": "Kövesd nálunk a legfontosabb sporteseményeket! Foglalj asztalt időben a kiemelt mérkőzésekre."
+    },
+    "gallery": {
+      "image_alt": "Galéria kép"
+    },
+    "map": {
+      "title": "Sieger Sport Bár térképe"
+    }
+  },
   "footer": {
     "contact": "Elérhetőségek",
     "address": "Cím",
@@ -40,6 +146,7 @@
     "phone": "Telefonszám",
     "opening_hours": "Nyitvatartás",
     "social": "Kövess minket",
+    "tagline": "Exkluzív környezet a campus szívében!",
     "rights": "© 2026 Sieger Sport Bár. Minden jog fenntartva!",
     "privacy": "Adatvédelmi tájékoztató",
     "monday": "Hétfő",

@@ -1,16 +1,15 @@
 <script setup>
-const { locale } = useI18n();
+const { t, locale } = useI18n();
 
-useHead({
-    title: 'Étlapok – Sieger Sport Bár',
+useHead(() => ({
+    title: t('pages.etlap.title'),
     meta: [
         {
             name: 'description',
-            content:
-                'Töltsd le aktuális étlapjainkat és ajánlatainkat PDF formátumban, vagy böngéssz az online étlapunk között.',
+            content: t('pages.etlap.description'),
         },
     ],
-});
+}));
 
 const { data: menu, pending, error } = await useFetch('/api/menu');
 
@@ -28,9 +27,9 @@ const categories = computed(() => menu.value?.categories ?? []);
         <!-- Hero -->
         <section class="relative py-32 bg-default border-b border-default">
             <UContainer class="text-center">
-                <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">Étlapok</h1>
+                <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">{{ $t('pages.etlap.heading') }}</h1>
                 <p class="text-muted text-lg max-w-2xl mx-auto">
-                    Böngéssz aktuális online étlapunkban, vagy töltsd le ajánlatainkat PDF formátumban.
+                    {{ $t('pages.etlap.lead') }}
                 </p>
             </UContainer>
         </section>
@@ -41,18 +40,18 @@ const categories = computed(() => menu.value?.categories ?? []);
                 <div class="max-w-5xl mx-auto space-y-8">
                     <div class="text-center">
                         <h2 class="text-3xl md:text-4xl font-black text-default tracking-wider mb-4">
-                            Letölthető étlap
+                            {{ $t('pages.etlap.download_title') }}
                         </h2>
                         <p class="text-muted max-w-2xl mx-auto">
-                            Tekintsd meg aktuális étlapunkat böngészőben, vagy töltsd le PDF formátumban.
+                            {{ $t('pages.etlap.download_lead') }}
                         </p>
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <PdfModalButton
                             :file="foodMenuPdf"
-                            title="Sieger étlap"
-                            button-label="Étlap megtekintése"
+                            :title="$t('pages.etlap.pdf_title')"
+                            :button-label="$t('pages.etlap.view_button')"
                         />
                         <UButton
                             :to="foodMenuPdf"
@@ -64,7 +63,7 @@ const categories = computed(() => menu.value?.categories ?? []);
                             icon="i-lucide-download"
                             class="uppercase tracking-widest justify-center"
                         >
-                            Étlap letöltése
+                            {{ $t('pages.etlap.download_button') }}
                         </UButton>
                     </div>
                 </div>
@@ -88,7 +87,7 @@ const categories = computed(() => menu.value?.categories ?? []);
                     v-else-if="error"
                     class="text-center text-error py-12"
                 >
-                    Hiba történt az étlap betöltése közben.
+                    {{ $t('pages.etlap.error') }}
                 </div>
 
                 <template v-else-if="menu">

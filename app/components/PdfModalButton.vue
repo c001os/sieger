@@ -33,14 +33,14 @@ const isOpen = ref(false);
                 />
                 <!-- Mobilon több böngésző nem tud PDF-et iframe-ben megjeleníteni -->
                 <p class="text-sm text-muted text-center">
-                    Ha az előnézet nem jelenik meg,
+                    {{ $t('pdf.no_preview_1') }}
                     <a
                         :href="file"
                         target="_blank"
                         rel="noopener"
                         class="text-primary font-bold underline"
-                        >nyisd meg új lapon</a
-                    >, vagy töltsd le a PDF-et.
+                        >{{ $t('pdf.open_new_tab') }}</a
+                    >{{ $t('pdf.no_preview_2') }}
                 </p>
             </div>
         </template>
@@ -56,7 +56,7 @@ const isOpen = ref(false);
                 icon="i-lucide-download"
                 class="uppercase tracking-widest"
             >
-                Letöltés
+                {{ $t('common.download') }}
             </UButton>
         </template>
     </UModal>

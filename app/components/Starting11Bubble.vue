@@ -57,13 +57,13 @@ const showFood = computed(() => isHovered.value || autoShowFood.value);
             >
                 <img
                     :src="item.logo"
-                    :alt="item.name.hu"
+                    :alt="item.name[locale] || item.name.hu"
                     class="absolute inset-0 w-full h-full object-contain p-1.5 md:p-2 transition-opacity duration-500"
                     :class="showFood ? 'opacity-0' : 'opacity-100'"
                 />
                 <img
                     :src="item.foodImage"
-                    :alt="item.name.hu"
+                    :alt="item.name[locale] || item.name.hu"
                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
                     :class="showFood ? 'opacity-100' : 'opacity-0'"
                 />

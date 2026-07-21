@@ -1,14 +1,15 @@
 <script setup>
-useHead({
-    title: 'Chef ajánlata – Sieger Sport Bár',
+const { t } = useI18n();
+
+useHead(() => ({
+    title: t('pages.chef.title'),
     meta: [
         {
             name: 'description',
-            content:
-                'Tekintsd meg séfünk szezonális ajánlatát, vagy töltsd le PDF formátumban.',
+            content: t('pages.chef.description'),
         },
     ],
-});
+}));
 
 const pdfFile = '/documents/sieger_chef_ajanlata_a4.pdf';
 </script>
@@ -18,9 +19,9 @@ const pdfFile = '/documents/sieger_chef_ajanlata_a4.pdf';
         <!-- Hero -->
         <section class="relative py-32 bg-default border-b border-default">
             <UContainer class="text-center">
-                <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">Chef ajánlata</h1>
+                <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">{{ $t('pages.chef.heading') }}</h1>
                 <p class="text-muted text-lg max-w-2xl mx-auto">
-                    Szezonális ajánlatunk a séfünk különleges válogatásával. Böngéssz böngészőben, vagy töltsd le PDF formátumban.
+                    {{ $t('pages.chef.lead') }}
                 </p>
             </UContainer>
         </section>
@@ -29,12 +30,12 @@ const pdfFile = '/documents/sieger_chef_ajanlata_a4.pdf';
         <section class="py-24 bg-muted">
             <UContainer>
                 <div class="max-w-5xl mx-auto space-y-8 text-center">
-                    <h2 class="text-2xl font-bold text-default">Chef ajánlata</h2>
+                    <h2 class="text-2xl font-bold text-default">{{ $t('pages.chef.heading') }}</h2>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <PdfModalButton
                             :file="pdfFile"
-                            title="Chef ajánlata"
-                            button-label="Megtekintés"
+                            :title="$t('pages.chef.heading')"
+                            :button-label="$t('common.view')"
                         />
                         <UButton
                             :to="pdfFile"
@@ -45,7 +46,7 @@ const pdfFile = '/documents/sieger_chef_ajanlata_a4.pdf';
                             icon="i-lucide-download"
                             class="uppercase tracking-widest justify-center"
                         >
-                            Letöltés
+                            {{ $t('common.download') }}
                         </UButton>
                     </div>
                 </div>

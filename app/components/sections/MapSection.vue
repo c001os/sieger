@@ -10,7 +10,7 @@
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Sieger Sport Bár térképe"
+                :title="$t('sections.map.title')"
             ></iframe>
         </div>
     </section>

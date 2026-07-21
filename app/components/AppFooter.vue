@@ -9,7 +9,7 @@
                         alt="Sieger Logo"
                         class="h-16 w-auto invert dark:invert-0"
                     />
-                    <p class="text-sm text-muted text-center md:text-left">Exkluzív környezet a campus szívében!</p>
+                    <p class="text-sm text-muted text-center md:text-left">{{ $t('footer.tagline') }}</p>
                 </div>
 
                 <!-- Contact -->
@@ -19,7 +19,7 @@
                         <span class="flex items-center gap-2"
                             ><img
                                 src="/ikonok/lokacio_ikon_korben_feher.png"
-                                alt="Cím"
+                                :alt="$t('footer.address')"
                                 class="w-4 h-4 object-contain"
                             />
                             9026 Győr, Egyetem tér 1.</span
@@ -29,7 +29,7 @@
                             class="flex items-center gap-2 hover:text-primary transition-colors"
                             ><img
                                 src="/ikonok/email_ikon_feher.png"
-                                alt="Email"
+                                :alt="$t('footer.email')"
                                 class="w-4 h-4 object-contain"
                             />
                             info@sieger.hu</a
@@ -39,7 +39,7 @@
                             class="flex items-center gap-2 hover:text-primary transition-colors"
                             ><img
                                 src="/ikonok/telefon_ikon_feher.png"
-                                alt="Telefon"
+                                :alt="$t('footer.phone')"
                                 class="w-4 h-4 object-contain"
                             />
                             +36 20 615 6491</a
@@ -113,7 +113,7 @@
             >
                 <p>{{ $t('footer.rights') }}</p>
                 <NuxtLink
-                    to="/adatvedelem"
+                    :to="localePath('/adatvedelem')"
                     class="hover:text-primary transition-colors"
                     >{{ $t('footer.privacy') }}</NuxtLink
                 >
@@ -121,3 +121,7 @@
         </UContainer>
     </footer>
 </template>
+
+<script setup>
+const localePath = useLocalePath();
+</script>

@@ -3,7 +3,7 @@
         <UContainer class="flex items-center justify-between h-20">
             <!-- Logo -->
             <NuxtLink
-                to="/"
+                :to="localePath('/')"
                 class="flex-shrink-0"
             >
                 <img

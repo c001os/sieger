@@ -12,10 +12,12 @@
 </template>
 
 <script setup>
-useHead({
-  title: 'Sieger Sport Bár - Győr',
+const { t } = useI18n();
+
+useHead(() => ({
+  title: t('pages.home.title'),
   meta: [
-    { name: 'description', content: 'Élvezz ki mindent a maga idejében! Sportélmény, magyar és nemzetközi étel különlegességek egy helyen.' }
+    { name: 'description', content: t('pages.home.description') }
   ]
-})
+}))
 </script>

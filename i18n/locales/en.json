@@ -33,6 +33,112 @@
     "book_table": "Book a Table",
     "full_menu": "Full Menu"
   },
+  "common": {
+    "view": "View",
+    "download": "Download",
+    "scroll_to_top": "Back to top"
+  },
+  "pdf": {
+    "no_preview_1": "If the preview does not load,",
+    "open_new_tab": "open it in a new tab",
+    "no_preview_2": " or download the PDF."
+  },
+  "booking": {
+    "title": "Table Reservation",
+    "description": "Choose an option for booking a table.",
+    "online": "Online table reservation"
+  },
+  "pages": {
+    "home": {
+      "title": "Sieger Sport Bar - Győr",
+      "description": "Enjoy everything in its own time! Sports experience, Hungarian and international food specialties in one place."
+    },
+    "etlap": {
+      "title": "Food Menus – Sieger Sport Bar",
+      "description": "Download our current food menus and offers as PDF, or browse our online food menu.",
+      "heading": "Food Menus",
+      "lead": "Browse our current online food menu, or download our offers as PDF.",
+      "download_title": "Downloadable Food Menu",
+      "download_lead": "View our current food menu in your browser, or download it as a PDF.",
+      "view_button": "View Food Menu",
+      "download_button": "Download Food Menu",
+      "pdf_title": "Sieger Food Menu",
+      "error": "An error occurred while loading the food menu."
+    },
+    "itallap": {
+      "title": "Drinks Menu – Sieger Sport Bar",
+      "description": "Browse our current drinks menu, or download it as a PDF.",
+      "heading": "Drinks Menu",
+      "card_description": "Our current drinks selection as a PDF."
+    },
+    "esemenyek": {
+      "title": "Events – Sieger Sport Bar",
+      "description": "Follow our current offers and upcoming sports events at Sieger Sport Bar!",
+      "heading": "Events",
+      "lead": "Follow our current offers and upcoming sports events! Don't miss the best matches!",
+      "more_coming": "More events coming soon. Follow us on our social channels to be the first to hear about our upcoming programmes!",
+      "button_labels": {
+        "itallap": "Drinks Menu",
+        "etlap": "Food Menu",
+        "info": "More Information",
+        "reszletek": "Details"
+      }
+    },
+    "starting11": {
+      "title": "Starting 11 – Sieger Sport Bar",
+      "description": "Choose from dishes worthy of champions! Artisan burgers and specialties in a unique formation."
+    },
+    "chef": {
+      "title": "Chef's Recommendation – Sieger Sport Bar",
+      "description": "Check out our chef's seasonal recommendation, or download it as a PDF.",
+      "heading": "Chef's Recommendation",
+      "lead": "Our seasonal offer with our chef's special selection. Browse in your browser, or download it as a PDF."
+    },
+    "deli": {
+      "title": "Half Time – Sieger Sport Bar",
+      "description": "Check out our current weekly menu offer at Sieger Sport Bar.",
+      "heading": "Half Time",
+      "lead": "Our current weekly menu offer, valid throughout the whole week.",
+      "menu_title": "Weekly Menu",
+      "all_week": "All week long"
+    }
+  },
+  "sections": {
+    "specials": {
+      "title": "Chef's Recommendation",
+      "button": "Our Specialties"
+    },
+    "drink_specials": {
+      "title_top": "Drink",
+      "title_bottom": "Specials",
+      "lead": "Signature drinks straight from the bar, exclusively at Sieger.",
+      "cocktails_top": "Refreshing",
+      "cocktails_bottom": "Cocktails",
+      "cocktails_desc": "The perfect choice alongside the matches.",
+      "spirits_top": "Premium",
+      "spirits_bottom": "Spirits",
+      "spirits_desc": "A wide selection of high-quality spirits.",
+      "more_title": "More Drinks",
+      "image_alt": "Drink special {n}"
+    },
+    "starting11": {
+      "title": "Our Starting 11 Offer",
+      "intro": "Choose from dishes worthy of champions! Artisan burgers and specialties in a unique formation. Hover over the team logos and see which dish they play with!",
+      "pitch_alt": "Football pitch",
+      "substitutes": "Substitutes",
+      "allergens": "Allergens"
+    },
+    "matches": {
+      "title": "Match Schedule",
+      "description": "Follow the most important sports events with us! Book your table in time for the highlighted matches."
+    },
+    "gallery": {
+      "image_alt": "Gallery image"
+    },
+    "map": {
+      "title": "Map of Sieger Sport Bar"
+    }
+  },
   "footer": {
     "contact": "Contact",
     "address": "Address",
@@ -40,6 +146,7 @@
     "phone": "Phone",
     "opening_hours": "Opening Hours",
     "social": "Follow Us",
+    "tagline": "An exclusive setting in the heart of the campus!",
     "rights": "© 2026 Sieger Sport Bar. All rights reserved!",
     "privacy": "Privacy Policy",
     "monday": "Monday",

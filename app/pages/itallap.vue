@@ -1,20 +1,17 @@
 <script setup>
-useHead({
-    title: 'Itallap – Sieger Sport Bár',
+const { t } = useI18n();
+
+useHead(() => ({
+    title: t('pages.itallap.title'),
     meta: [
         {
             name: 'description',
-            content:
-                'Böngéssz aktuális itallapunkban, vagy töltsd le PDF formátumban.',
+            content: t('pages.itallap.description'),
         },
     ],
-});
+}));
 
-const drinkMenu = {
-    title: 'Itallap',
-    description: 'Aktuális italválasztékunk PDF formátumban.',
-    file: '/documents/sieger_itallap_2026_weboldalra.pdf',
-};
+const drinkMenuFile = '/documents/sieger_itallap_2026_weboldalra.pdf';
 </script>
 
 <template>
@@ -22,9 +19,9 @@ const drinkMenu = {
         <!-- Hero -->
         <section class="relative py-32 bg-default border-b border-default">
             <UContainer class="text-center">
-                <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">Itallap</h1>
+                <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">{{ $t('pages.itallap.heading') }}</h1>
                 <p class="text-muted text-lg max-w-2xl mx-auto">
-                    Böngéssz aktuális itallapunkban, vagy töltsd le PDF formátumban.
+                    {{ $t('pages.itallap.description') }}
                 </p>
             </UContainer>
         </section>
@@ -44,18 +41,18 @@ const drinkMenu = {
                         </div>
 
                         <div>
-                            <h2 class="text-2xl font-bold text-default mb-2">{{ drinkMenu.title }}</h2>
-                            <p class="text-sm text-muted">{{ drinkMenu.description }}</p>
+                            <h2 class="text-2xl font-bold text-default mb-2">{{ $t('pages.itallap.heading') }}</h2>
+                            <p class="text-sm text-muted">{{ $t('pages.itallap.card_description') }}</p>
                         </div>
 
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
                             <PdfModalButton
-                                :file="drinkMenu.file"
-                                title="Itallap"
-                                button-label="Megtekintés"
+                                :file="drinkMenuFile"
+                                :title="$t('pages.itallap.heading')"
+                                :button-label="$t('common.view')"
                             />
                             <UButton
-                                :to="drinkMenu.file"
+                                :to="drinkMenuFile"
                                 external
                                 download
                                 color="primary"
@@ -64,7 +61,7 @@ const drinkMenu = {
                                 icon="i-lucide-download"
                                 class="uppercase tracking-widest justify-center w-full sm:w-auto"
                             >
-                                Letöltés
+                                {{ $t('common.download') }}
                             </UButton>
                         </div>
                     </div>

@@ -5,8 +5,8 @@ const isOpen = defineModel('open', { default: false });
 <template>
     <UModal
         v-model:open="isOpen"
-        title="Asztalfoglalás"
-        description="Válassz egy lehetőséget az asztalfoglaláshoz."
+        :title="$t('booking.title')"
+        :description="$t('booking.description')"
     >
         <template #body>
             <div class="flex flex-col gap-3">
@@ -20,7 +20,7 @@ const isOpen = defineModel('open', { default: false });
                     <template #leading>
                         <img
                             src="/ikonok/telefon_ikon_feher.png"
-                            alt="Telefon"
+                            :alt="$t('footer.phone')"
                             class="w-5 h-5 object-contain"
                         />
                     </template>
@@ -36,7 +36,7 @@ const isOpen = defineModel('open', { default: false });
                     icon="i-lucide-calendar-check"
                     class="w-full justify-center"
                 >
-                    Online asztalfoglalás
+                    {{ $t('booking.online') }}
                 </UButton>
             </div>
         </template>

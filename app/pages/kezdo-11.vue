@@ -1,14 +1,15 @@
 <script setup>
-useHead({
-    title: 'Kezdő 11 – Sieger Sport Bár',
+const { t } = useI18n();
+
+useHead(() => ({
+    title: t('pages.starting11.title'),
     meta: [
         {
             name: 'description',
-            content:
-                'Válogass a bajnokoknak kijáró fogások közül! Kézműves burgerek és különlegességek, egyedi felállásban.',
+            content: t('pages.starting11.description'),
         },
     ],
-});
+}));
 </script>
 
 <template>

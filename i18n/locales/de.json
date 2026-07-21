@@ -33,6 +33,112 @@
     "book_table": "Tisch reservieren",
     "full_menu": "Komplette Karte"
   },
+  "common": {
+    "view": "Ansehen",
+    "download": "Herunterladen",
+    "scroll_to_top": "Nach oben scrollen"
+  },
+  "pdf": {
+    "no_preview_1": "Wenn die Vorschau nicht angezeigt wird,",
+    "open_new_tab": "öffne sie in einem neuen Tab",
+    "no_preview_2": " oder lade das PDF herunter."
+  },
+  "booking": {
+    "title": "Tischreservierung",
+    "description": "Wähle eine Option für die Tischreservierung.",
+    "online": "Online-Tischreservierung"
+  },
+  "pages": {
+    "home": {
+      "title": "Sieger Sport Bar - Győr",
+      "description": "Genieße alles zu seiner Zeit! Sporterlebnis, ungarische und internationale Spezialitäten an einem Ort."
+    },
+    "etlap": {
+      "title": "Speisekarten – Sieger Sport Bar",
+      "description": "Lade unsere aktuellen Speisekarten und Angebote als PDF herunter oder stöbere in unserer Online-Speisekarte.",
+      "heading": "Speisekarten",
+      "lead": "Stöbere in unserer aktuellen Online-Speisekarte oder lade unsere Angebote als PDF herunter.",
+      "download_title": "Speisekarte zum Herunterladen",
+      "download_lead": "Sieh dir unsere aktuelle Speisekarte im Browser an oder lade sie als PDF herunter.",
+      "view_button": "Speisekarte ansehen",
+      "download_button": "Speisekarte herunterladen",
+      "pdf_title": "Sieger Speisekarte",
+      "error": "Beim Laden der Speisekarte ist ein Fehler aufgetreten."
+    },
+    "itallap": {
+      "title": "Getränkekarte – Sieger Sport Bar",
+      "description": "Stöbere in unserer aktuellen Getränkekarte oder lade sie als PDF herunter.",
+      "heading": "Getränkekarte",
+      "card_description": "Unsere aktuelle Getränkeauswahl als PDF."
+    },
+    "esemenyek": {
+      "title": "Veranstaltungen – Sieger Sport Bar",
+      "description": "Verfolge unsere aktuellen Angebote und kommenden Sportveranstaltungen in der Sieger Sport Bar!",
+      "heading": "Veranstaltungen",
+      "lead": "Verfolge unsere aktuellen Angebote und kommenden Sportveranstaltungen! Verpasse nicht die besten Spiele!",
+      "more_coming": "Weitere Veranstaltungen folgen in Kürze. Folge uns auf unseren Social-Media-Kanälen, um als Erster von unseren kommenden Programmen zu erfahren!",
+      "button_labels": {
+        "itallap": "Getränkekarte",
+        "etlap": "Speisekarte",
+        "info": "Weitere Informationen",
+        "reszletek": "Details"
+      }
+    },
+    "starting11": {
+      "title": "Startelf – Sieger Sport Bar",
+      "description": "Wähle aus Gerichten, die Champions gebühren! Handgemachte Burger und Spezialitäten in einzigartiger Aufstellung."
+    },
+    "chef": {
+      "title": "Empfehlung des Küchenchefs – Sieger Sport Bar",
+      "description": "Sieh dir die saisonale Empfehlung unseres Küchenchefs an oder lade sie als PDF herunter.",
+      "heading": "Empfehlung des Küchenchefs",
+      "lead": "Unser saisonales Angebot mit der besonderen Auswahl unseres Küchenchefs. Stöbere im Browser oder lade es als PDF herunter."
+    },
+    "deli": {
+      "title": "Halbzeit – Sieger Sport Bar",
+      "description": "Sieh dir unser aktuelles Wochenmenü in der Sieger Sport Bar an.",
+      "heading": "Halbzeit",
+      "lead": "Unser aktuelles Wochenmenü, das die ganze Woche gültig ist.",
+      "menu_title": "Wochenmenü",
+      "all_week": "Die ganze Woche"
+    }
+  },
+  "sections": {
+    "specials": {
+      "title": "Empfehlung des Küchenchefs",
+      "button": "Unsere Spezialitäten"
+    },
+    "drink_specials": {
+      "title_top": "Getränke",
+      "title_bottom": "Spezialitäten",
+      "lead": "Signature-Getränke direkt von der Theke, exklusiv bei Sieger.",
+      "cocktails_top": "Erfrischende",
+      "cocktails_bottom": "Cocktails",
+      "cocktails_desc": "Die perfekte Wahl zu den Spielen.",
+      "spirits_top": "Premium",
+      "spirits_bottom": "Spirituosen",
+      "spirits_desc": "Eine große Auswahl an hochwertigen Spirituosen.",
+      "more_title": "Weitere Getränke",
+      "image_alt": "Getränkespezialität {n}"
+    },
+    "starting11": {
+      "title": "Unser Startelf-Angebot",
+      "intro": "Wähle aus Gerichten, die Champions gebühren! Handgemachte Burger und Spezialitäten in einzigartiger Aufstellung. Fahre mit der Maus über die Teamlogos und sieh dir an, mit welchem Gericht sie spielen!",
+      "pitch_alt": "Fußballfeld",
+      "substitutes": "Auswechslungen",
+      "allergens": "Allergene"
+    },
+    "matches": {
+      "title": "Spielplan",
+      "description": "Verfolge die wichtigsten Sportveranstaltungen bei uns! Reserviere rechtzeitig einen Tisch für die Top-Spiele."
+    },
+    "gallery": {
+      "image_alt": "Galeriebild"
+    },
+    "map": {
+      "title": "Karte der Sieger Sport Bar"
+    }
+  },
   "footer": {
     "contact": "Kontakt",
     "address": "Adresse",
@@ -40,6 +146,7 @@
     "phone": "Telefon",
     "opening_hours": "Öffnungszeiten",
     "social": "Folge uns",
+    "tagline": "Exklusive Atmosphäre im Herzen des Campus!",
     "rights": "© 2026 Sieger Sport Bar. Alle Rechte vorbehalten!",
     "privacy": "Datenschutz",
     "monday": "Montag",

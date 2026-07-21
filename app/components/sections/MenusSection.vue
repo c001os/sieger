@@ -1,3 +1,7 @@
+<script setup>
+const localePath = useLocalePath();
+</script>
+
 <template>
     <section class="py-24 bg-default border-t border-default relative">
         <UContainer>
@@ -8,7 +12,7 @@
                 >
                     <img
                         src="/media/food/fejlec.webp"
-                        alt="Étlap"
+                        :alt="$t('nav.offers.food_menu')"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-60 group-hover:opacity-80"
                     />
                     <div
@@ -21,13 +25,13 @@
                             {{ $t('nav.food_menu') }}
                         </h2>
                         <UButton
-                            to="/etlap"
+                            :to="localePath('/etlap')"
                             color="white"
                             variant="solid"
                             size="lg"
                             class="uppercase tracking-widest font-bold hover:bg-primary hover:text-inverted transition-all shadow-xl"
                         >
-                            Megtekintés
+                            {{ $t('common.view') }}
                         </UButton>
                     </div>
                 </div>
@@ -38,7 +42,7 @@
                 >
                     <img
                         src="/media/drinks/fejlec.webp"
-                        alt="Itallap"
+                        :alt="$t('nav.drinks_menu')"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-60 group-hover:opacity-80"
                     />
                     <div
@@ -51,13 +55,13 @@
                             {{ $t('nav.drinks_menu') }}
                         </h2>
                         <UButton
-                            to="/itallap"
+                            :to="localePath('/itallap')"
                             color="white"
                             variant="solid"
                             size="lg"
                             class="uppercase tracking-widest font-bold hover:bg-primary hover:text-inverted transition-all shadow-xl"
                         >
-                            Megtekintés
+                            {{ $t('common.view') }}
                         </UButton>
                     </div>
                 </div>

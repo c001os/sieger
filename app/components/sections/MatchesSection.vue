@@ -2,10 +2,10 @@
     <section class="py-24 bg-muted border-t border-default relative">
         <UContainer>
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-black text-default uppercase tracking-wider mb-4">Meccslista</h2>
+                <h2 class="text-3xl md:text-5xl font-black text-default uppercase tracking-wider mb-4">{{ $t('sections.matches.title') }}</h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-muted max-w-2xl mx-auto">
-                    Kövesd nálunk a legfontosabb sporteseményeket! Foglalj asztalt időben a kiemelt mérkőzésekre.
+                    {{ $t('sections.matches.description') }}
                 </p>
             </div>
 
@@ -34,7 +34,7 @@
                                 {{ match.time }}
                             </span>
                             <span class="text-muted text-[10px] md:text-xs font-bold tracking-wider uppercase">
-                                {{ match.date }}
+                                {{ text(match.date) }}
                             </span>
                         </div>
 
@@ -56,34 +56,40 @@
 </template>
 
 <script setup>
+const { locale } = useI18n();
+
+function text(obj) {
+    return obj?.[locale.value] || obj?.hu || '';
+}
+
 const matches = [
     {
         id: 1,
         team1: { name: 'Real Madrid', color: '#FEBE10' },
         team2: { name: 'Barcelona', color: '#A50044' },
         time: '21:00',
-        date: 'Holnap',
+        date: { hu: 'Holnap', en: 'Tomorrow', de: 'Morgen' },
     },
     {
         id: 2,
         team1: { name: 'Bayern Munich', color: '#DC052D' },
         team2: { name: 'Dortmund', color: '#FDE100' },
         time: '18:30',
-        date: 'Szombat, okt. 14.',
+        date: { hu: 'Szombat, okt. 14.', en: 'Saturday, Oct 14', de: 'Samstag, 14. Okt.' },
     },
     {
         id: 3,
         team1: { name: 'Arsenal', color: '#EF0107' },
         team2: { name: 'Chelsea', color: '#034694' },
         time: '15:00',
-        date: 'Vasárnap, okt. 15.',
+        date: { hu: 'Vasárnap, okt. 15.', en: 'Sunday, Oct 15', de: 'Sonntag, 15. Okt.' },
     },
     {
         id: 4,
         team1: { name: 'Man City', color: '#6CABDD' },
         team2: { name: 'Liverpool', color: '#C8102E' },
         time: '12:30',
-        date: 'Vasárnap, okt. 15.',
+        date: { hu: 'Vasárnap, okt. 15.', en: 'Sunday, Oct 15', de: 'Sonntag, 15. Okt.' },
     },
 ];
 </script>

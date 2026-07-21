@@ -44,7 +44,7 @@ const starters = [
         price: '2 490 Ft',
         logo: teamLogos.l60,
         foodImage: foodImages.img25,
-        position: { top: '9.5%', left: '50%' },
+        position: { top: '15%', left: '34%' },
     },
     {
         name: { hu: 'Kamra ízelítő', en: 'Pantry Platter', de: 'Vorspeisenplatte' },
@@ -56,7 +56,7 @@ const starters = [
         price: '3 490 Ft',
         logo: teamLogos.l70,
         foodImage: foodImages.img27,
-        position: { top: '25%', left: '20%' },
+        position: { top: '15%', left: '50%' },
     },
     {
         name: { hu: 'Tatár beef steak', en: 'Beef Tartare', de: 'Beef Tatar' },
@@ -68,7 +68,7 @@ const starters = [
         price: '5 790 Ft',
         logo: teamLogos.l80,
         foodImage: foodImages.img30,
-        position: { top: '25%', left: '80%' },
+        position: { top: '15%', left: '66%' },
     },
     {
         name: { hu: 'Sieger burger', en: 'Sieger Burger', de: 'Sieger Burger' },
@@ -80,7 +80,7 @@ const starters = [
         price: '4 990 Ft',
         logo: teamLogos.l90,
         foodImage: foodImages.img31,
-        position: { top: '42%', left: '15%' },
+        position: { top: '38%', left: '22%' },
     },
     {
         name: { hu: 'BBQ spare ribs', en: 'BBQ Spare Ribs', de: 'BBQ Spareribs' },
@@ -92,7 +92,7 @@ const starters = [
         price: '5 990 Ft',
         logo: teamLogos.l100,
         foodImage: foodImages.img32,
-        position: { top: '42%', left: '50%' },
+        position: { top: '38%', left: '42%' },
     },
     {
         name: { hu: 'Kacsacomb', en: 'Duck Leg', de: 'Entenkeule' },
@@ -104,7 +104,7 @@ const starters = [
         price: '5 490 Ft',
         logo: teamLogos.l110,
         foodImage: foodImages.img43,
-        position: { top: '42%', left: '85%' },
+        position: { top: '38%', left: '58%' },
     },
     {
         name: { hu: 'BBQ csirkeszárnyak', en: 'BBQ Chicken Wings', de: 'BBQ Chicken Wings' },
@@ -116,7 +116,7 @@ const starters = [
         price: '4 190 Ft',
         logo: teamLogos.l120,
         foodImage: foodImages.malacos,
-        position: { top: '60%', left: '12%' },
+        position: { top: '38%', left: '78%' },
     },
     {
         name: { hu: 'Pulled pork szendvics', en: 'Pulled Pork Sandwich', de: 'Pulled-Pork-Sandwich' },
@@ -128,7 +128,7 @@ const starters = [
         price: '4 490 Ft',
         logo: teamLogos.l130,
         foodImage: foodImages.img25,
-        position: { top: '60%', left: '38%' },
+        position: { top: '64%', left: '32%' },
     },
     {
         name: { hu: 'Mézes-chilis lazac', en: 'Honey-Chili Salmon', de: 'Honig-Chili-Lachs' },
@@ -140,7 +140,7 @@ const starters = [
         price: '4 990 Ft',
         logo: teamLogos.l140,
         foodImage: foodImages.img27,
-        position: { top: '60%', left: '62%' },
+        position: { top: '64%', left: '50%' },
     },
     {
         name: { hu: 'Chilis bab + nachos', en: 'Chili con Carne', de: 'Chili con Carne' },
@@ -152,7 +152,7 @@ const starters = [
         price: '3 990 Ft',
         logo: teamLogos.l150,
         foodImage: foodImages.img30,
-        position: { top: '60%', left: '88%' },
+        position: { top: '64%', left: '68%' },
     },
     {
         name: { hu: '„Malacos krumpli”', en: 'Sieger Pulled Pork Potatoes', de: 'Sieger Spanferkel-Kartoffeln' },
@@ -164,7 +164,7 @@ const starters = [
         price: '4 490 Ft',
         logo: teamLogos.l160,
         foodImage: foodImages.malacos,
-        position: { top: '78%', left: '50%' },
+        position: { top: '88%', left: '50%' },
     },
 ];
 
@@ -239,12 +239,11 @@ const allergens = [
             <!-- Header -->
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-5xl font-black text-default uppercase tracking-wider mb-4">
-                    Kezdő 11-es ajánlatunk
+                    {{ $t('sections.starting11.title') }}
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-muted max-w-2xl mx-auto">
-                    Válogass a bajnokoknak kijáró fogások közül! Kézműves burgerek és különlegességek, egyedi
-                    felállásban. Húzd az egeret a csapatlogók fölé, és nézd meg, melyik étellel játszanak!
+                    {{ $t('sections.starting11.intro') }}
                 </p>
             </div>
 
@@ -252,7 +251,7 @@ const allergens = [
             <div class="hidden md:block relative max-w-7xl mx-auto aspect-[4/3] rounded-none overflow-hidden shadow-2xl">
                 <img
                     src="/media/starting11/backgrounds/kezdo_11_fooldal_hatter_fekvo.webp"
-                    alt="Focipálya"
+                    :alt="$t('sections.starting11.pitch_alt')"
                     class="absolute inset-0 w-full h-full object-cover"
                 />
 
@@ -302,7 +301,7 @@ const allergens = [
                                 <UIcon name="i-lucide-arrow-up-down" class="w-5 h-5 text-white" />
                             </span>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-black text-white uppercase tracking-wider">Cserék</h3>
+                        <h3 class="text-2xl md:text-3xl font-black text-white uppercase tracking-wider">{{ $t('sections.starting11.substitutes') }}</h3>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 justify-items-start md:justify-items-center">
                         <Starting11Bubble
@@ -320,7 +319,7 @@ const allergens = [
             <!-- Allergens -->
             <div class="mt-16 md:mt-24 max-w-7xl mx-auto">
                 <div class="text-center mb-8">
-                    <h3 class="text-2xl md:text-3xl font-black text-default uppercase tracking-wider">Allergének</h3>
+                    <h3 class="text-2xl md:text-3xl font-black text-default uppercase tracking-wider">{{ $t('sections.starting11.allergens') }}</h3>
                 </div>
                 <div class="bg-elevated border border-default rounded-xl p-6 md:p-8">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
