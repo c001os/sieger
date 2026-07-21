@@ -38,9 +38,10 @@ const specials = [
                     Specialitásaink
                 </UButton>
             </div>
+        </UContainer>
 
-            <!-- Checkerboard grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4">
+        <!-- Checkerboard grid – az „Italspecialitások" blokkokkal egyforma, teljes szélességű cellaméret -->
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
                 <!-- Row 1 -->
                 <div
                     class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
@@ -146,7 +147,6 @@ const specials = [
                         Teljes étlap
                     </UButton>
                 </div>
-            </div>
-        </UContainer>
+        </div>
     </section>
 </template>

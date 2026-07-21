@@ -4,13 +4,24 @@ useHead({
     meta: [
         {
             name: 'description',
-            content:
-                'Tekintsd meg aktuális heti menü ajánlatunkat, vagy töltsd le PDF formátumban.',
+            content: 'Tekintsd meg aktuális heti menü ajánlatunkat a Sieger Sport Bárban.',
         },
     ],
 });
 
-const pdfFile = '/documents/sieger_deli_felido_01_19.pdf';
+// Heti menü – a későbbi Directus adminban egyetlen szöveges blokk + egy kép
+// (PDF feltöltés megszűnt, a menü az egész hétre egységesen vonatkozik)
+const weeklyMenu = {
+    week: '2026. július 21. – 27.',
+    image: '/media/food/fejlec.webp',
+    text: `Frankfurti leves
+
+Csirkepaprikás galuskával
+vagy Sertésszűz erdei gombamártással, hasábburgonyával
+
+Túrógombóc vaníliasodóval`,
+    price: '2 990 Ft',
+};
 </script>
 
 <template>
@@ -20,34 +31,43 @@ const pdfFile = '/documents/sieger_deli_felido_01_19.pdf';
             <UContainer class="text-center">
                 <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">Déli félidő</h1>
                 <p class="text-muted text-lg max-w-2xl mx-auto">
-                    Aktuális heti menü ajánlatunk. Böngéssz böngészőben, vagy töltsd le PDF formátumban.
+                    Aktuális heti menü ajánlatunk, amely az egész hétre egységesen érvényes.
                 </p>
             </UContainer>
         </section>
 
-        <!-- PDF viewer -->
+        <!-- Weekly menu -->
         <section class="py-24 bg-muted">
             <UContainer>
-                <div class="max-w-5xl mx-auto space-y-8 text-center">
-                    <h2 class="text-2xl font-bold text-default">Heti menü</h2>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <PdfModalButton
-                            :file="pdfFile"
-                            title="Déli félidő"
-                            button-label="Megtekintés"
-                        />
-                        <UButton
-                            :to="pdfFile"
-                            download
-                            color="primary"
-                            variant="solid"
-                            size="lg"
-                            icon="i-lucide-download"
-                            class="uppercase tracking-widest justify-center"
-                        >
-                            Letöltés
-                        </UButton>
-                    </div>
+                <div class="max-w-5xl mx-auto">
+                    <article class="bg-elevated border border-default rounded-2xl overflow-hidden shadow-sm">
+                        <div class="grid md:grid-cols-2 gap-0">
+                            <!-- Image -->
+                            <div class="relative aspect-[4/3] md:aspect-auto overflow-hidden">
+                                <img
+                                    :src="weeklyMenu.image"
+                                    alt="Heti menü"
+                                    class="w-full h-full object-cover"
+                                />
+                                <div
+                                    class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-md"
+                                >
+                                    {{ weeklyMenu.week }}
+                                </div>
+                            </div>
+
+                            <!-- Single weekly text block -->
+                            <div class="p-8 md:p-12 flex flex-col justify-center">
+                                <div class="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm mb-3">
+                                    <UIcon name="i-lucide-calendar-days" class="w-4 h-4" />
+                                    <span>Egész héten</span>
+                                </div>
+                                <h2 class="text-2xl md:text-4xl font-black text-default tracking-wider mb-6">Heti menü</h2>
+                                <p class="text-muted text-lg leading-relaxed whitespace-pre-line mb-8">{{ weeklyMenu.text }}</p>
+                                <div class="text-2xl font-black text-primary">{{ weeklyMenu.price }}</div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </UContainer>
         </section>

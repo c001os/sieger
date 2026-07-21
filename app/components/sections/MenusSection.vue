@@ -51,7 +51,7 @@
                             {{ $t('nav.drinks_menu') }}
                         </h2>
                         <UButton
-                            to="/etlap"
+                            to="/itallap"
                             color="white"
                             variant="solid"
                             size="lg"

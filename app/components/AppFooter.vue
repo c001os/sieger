@@ -60,8 +60,7 @@
                             <span class="font-semibold">{{ $t('footer.tue_sat') }}:</span> 11:00 – 00:00
                         </li>
                         <li>
-                            <span class="font-semibold">{{ $t('footer.sunday') }}:</span>
-                            <span class="text-error font-bold">{{ $t('footer.closed') }}</span>
+                            <span class="font-semibold">{{ $t('footer.sunday') }}:</span>{{ ' ' }}<span class="text-error font-bold">{{ $t('footer.closed') }}</span>
                         </li>
                     </ul>
                 </div>

@@ -12,18 +12,53 @@ useHead({
 const isBookingOpen = ref(false);
 const localePath = useLocalePath();
 
+// Eseménygomb felirat-opciók (a későbbi Directus adminban legördülő listából választható)
+const buttonLabelOptions = {
+    itallap: 'Itallap',
+    etlap: 'Étlap',
+    info: 'További információ',
+    reszletek: 'Részletek',
+};
+
+// button.type: 'route' = belső oldal, 'external' = külső link, 'pdf' = PDF dokumentum
+// Képméret: 1200x630 px (public/media/events/)
 const events = [
     {
         id: 1,
-        title: 'El Clásico élőben a Siegerben',
-        date: '2026. január 25.',
+        title: 'Szurkolj velünk óriáskivetítőn!',
+        date: '2026. július 19.',
         time: '21:00',
-        image: '/media/gallery/251026_sieger_el_classico_nemeth_kristof_9.webp',
+        image: '/media/events/szurkolj_velunk_oriaskivetiton_1200x630.webp',
         description:
-            'Gyere és szurkolj velünk a szezon egyik legnagyobb rangadóján! Nagy képernyők, különleges italakciók és remek hangulat vár minden futballrajongót.',
+            'Szurkolj velünk a világbajnokság legizgalmasabb mérkőzésein! Nézd a meccseket óriáskivetítőn, élvezd a fantasztikus hangulatot, és válassz finom fogásaink közül a Kezdő 11-es ajánlatból!',
+        button: { label: 'reszletek', type: 'route', to: '/kezdo-11' },
+    },
+    {
+        id: 2,
+        title: 'Formula-1 Weekend – Movie Night',
+        date: '2026. július 25.',
+        time: '20:00',
+        image: '/media/events/f1_movie_night_1200x630.webp',
+        description:
+            'A délutáni időmérő után nálunk folytatódik az F1-hangulat: nagykivetítőnkön levetítjük az F1 – A filmet, hogy egy igazán motorsportos estét tölthess el velünk.',
+        button: { label: 'info', type: 'external', to: 'https://www.facebook.com/siegersportbar' },
+    },
+    {
+        id: 3,
+        title: 'Sieger x Uni-Elite Sport Club – Formula-1 Weekend',
+        date: '2026. július 24–26.',
+        time: '',
+        image: '/media/events/f1_weekend_uni_elite_1200x630.webp',
+        description:
+            'Szurkoljuk végig együtt a Magyar Nagydíjat! Hozd el a barátokat, éld át a száguldás élményét az autószimulátorokban, pörögj a dj ütemeire, és izguld végig a futamot a hatalmas nagykivetítőnkön! És ez még nem minden: brutális járművekkel és szuper nyereményekkel is várunk!',
         featured: true,
+        button: { label: 'info', type: 'external', to: 'https://www.facebook.com/siegersportbar' },
     },
 ];
+
+function eventButtonTo(button) {
+    return button.type === 'route' ? localePath(button.to) : button.to;
+}
 </script>
 
 <template>
@@ -48,11 +83,13 @@ const events = [
                         class="group bg-elevated border border-default rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
                     >
                         <div class="grid md:grid-cols-2 gap-0">
-                            <!-- Image -->
-                            <div class="relative aspect-[4/3] md:aspect-auto overflow-hidden">
+                            <!-- Image (1200x630) -->
+                            <div class="relative aspect-[1200/630] md:aspect-auto overflow-hidden">
                                 <img
                                     :src="event.image"
                                     :alt="event.title"
+                                    width="1200"
+                                    height="630"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div
@@ -64,7 +101,10 @@ const events = [
 
                             <!-- Content -->
                             <div class="p-8 md:p-12 flex flex-col justify-center">
-                                <div class="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm mb-3">
+                                <div
+                                    v-if="event.time"
+                                    class="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm mb-3"
+                                >
                                     <UIcon name="i-lucide-clock" class="w-4 h-4" />
                                     <span>{{ event.time }}</span>
                                 </div>
@@ -84,14 +124,22 @@ const events = [
                                     >
                                         Asztalfoglalás
                                     </UButton>
+                                    <PdfModalButton
+                                        v-if="event.button?.type === 'pdf'"
+                                        :file="event.button.to"
+                                        :title="event.title"
+                                        :button-label="buttonLabelOptions[event.button.label]"
+                                    />
                                     <UButton
-                                        :to="localePath('/itallap')"
+                                        v-else-if="event.button"
+                                        :to="eventButtonTo(event.button)"
+                                        :target="event.button.type === 'external' ? '_blank' : undefined"
                                         color="neutral"
                                         variant="outline"
                                         size="lg"
                                         class="uppercase tracking-widest justify-center"
                                     >
-                                        Itallap
+                                        {{ buttonLabelOptions[event.button.label] }}
                                     </UButton>
                                 </div>
                             </div>

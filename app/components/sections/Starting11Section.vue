@@ -44,7 +44,7 @@ const starters = [
         price: '2 490 Ft',
         logo: teamLogos.l60,
         foodImage: foodImages.img25,
-        position: { top: '8%', left: '50%' },
+        position: { top: '7%', left: '50%' },
     },
     {
         name: { hu: 'Kamra ízelítő', en: 'Pantry Platter', de: 'Vorspeisenplatte' },
@@ -56,7 +56,7 @@ const starters = [
         price: '3 490 Ft',
         logo: teamLogos.l70,
         foodImage: foodImages.img27,
-        position: { top: '22%', left: '20%' },
+        position: { top: '20%', left: '20%' },
     },
     {
         name: { hu: 'Tatár beef steak', en: 'Beef Tartare', de: 'Beef Tatar' },
@@ -68,7 +68,7 @@ const starters = [
         price: '5 790 Ft',
         logo: teamLogos.l80,
         foodImage: foodImages.img30,
-        position: { top: '22%', left: '80%' },
+        position: { top: '20%', left: '80%' },
     },
     {
         name: { hu: 'Sieger burger', en: 'Sieger Burger', de: 'Sieger Burger' },
@@ -80,7 +80,7 @@ const starters = [
         price: '4 990 Ft',
         logo: teamLogos.l90,
         foodImage: foodImages.img31,
-        position: { top: '36%', left: '15%' },
+        position: { top: '34%', left: '15%' },
     },
     {
         name: { hu: 'BBQ spare ribs', en: 'BBQ Spare Ribs', de: 'BBQ Spareribs' },
@@ -92,7 +92,7 @@ const starters = [
         price: '5 990 Ft',
         logo: teamLogos.l100,
         foodImage: foodImages.img32,
-        position: { top: '36%', left: '50%' },
+        position: { top: '34%', left: '50%' },
     },
     {
         name: { hu: 'Kacsacomb', en: 'Duck Leg', de: 'Entenkeule' },
@@ -104,7 +104,7 @@ const starters = [
         price: '5 490 Ft',
         logo: teamLogos.l110,
         foodImage: foodImages.img43,
-        position: { top: '36%', left: '85%' },
+        position: { top: '34%', left: '85%' },
     },
     {
         name: { hu: 'BBQ csirkeszárnyak', en: 'BBQ Chicken Wings', de: 'BBQ Chicken Wings' },
@@ -116,7 +116,7 @@ const starters = [
         price: '4 190 Ft',
         logo: teamLogos.l120,
         foodImage: foodImages.malacos,
-        position: { top: '52%', left: '12%' },
+        position: { top: '55%', left: '12%' },
     },
     {
         name: { hu: 'Pulled pork szendvics', en: 'Pulled Pork Sandwich', de: 'Pulled-Pork-Sandwich' },
@@ -128,7 +128,7 @@ const starters = [
         price: '4 490 Ft',
         logo: teamLogos.l130,
         foodImage: foodImages.img25,
-        position: { top: '52%', left: '38%' },
+        position: { top: '55%', left: '38%' },
     },
     {
         name: { hu: 'Mézes-chilis lazac', en: 'Honey-Chili Salmon', de: 'Honig-Chili-Lachs' },
@@ -140,7 +140,7 @@ const starters = [
         price: '4 990 Ft',
         logo: teamLogos.l140,
         foodImage: foodImages.img27,
-        position: { top: '52%', left: '62%' },
+        position: { top: '55%', left: '62%' },
     },
     {
         name: { hu: 'Chilis bab + nachos', en: 'Chili con Carne', de: 'Chili con Carne' },
@@ -152,7 +152,7 @@ const starters = [
         price: '3 990 Ft',
         logo: teamLogos.l150,
         foodImage: foodImages.img30,
-        position: { top: '52%', left: '88%' },
+        position: { top: '55%', left: '88%' },
     },
     {
         name: { hu: '„Malacos krumpli”', en: 'Sieger Pulled Pork Potatoes', de: 'Sieger Spanferkel-Kartoffeln' },
@@ -260,7 +260,7 @@ const allergens = [
                     v-for="(item, index) in starters"
                     :key="index"
                     :item="item"
-                    :reverse="item.position.left > 50"
+                    :tooltip="parseFloat(item.position.top) > 60 ? 'top' : 'bottom'"
                     :delay="index * 100"
                     class="absolute"
                     :style="{
@@ -294,6 +294,14 @@ const allergens = [
             >
                 <UContainer>
                     <div class="text-center mb-8">
+                        <!-- Csere jelző ikon -->
+                        <div class="flex justify-center mb-4">
+                            <span
+                                class="w-11 h-11 rounded-full border-2 border-white/70 flex items-center justify-center shadow-lg"
+                            >
+                                <UIcon name="i-lucide-arrow-up-down" class="w-5 h-5 text-white" />
+                            </span>
+                        </div>
                         <h3 class="text-2xl md:text-3xl font-black text-white uppercase tracking-wider">Cserék</h3>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 justify-items-center">
@@ -301,7 +309,7 @@ const allergens = [
                             v-for="(item, index) in substitutes"
                             :key="index"
                             :item="item"
-                            :reverse="false"
+                            tooltip="bottom"
                             :delay="index * 100"
                         />
                     </div>
