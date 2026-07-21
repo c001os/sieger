@@ -25,16 +25,30 @@ const isOpen = ref(false);
         </UButton>
 
         <template #body>
-            <iframe
-                :src="file"
-                class="w-full h-[80vh] rounded-lg"
-                :title="title"
-            />
+            <div class="flex flex-col gap-3">
+                <iframe
+                    :src="file"
+                    class="w-full h-[75vh] rounded-lg bg-white"
+                    :title="title"
+                />
+                <!-- Mobilon több böngésző nem tud PDF-et iframe-ben megjeleníteni -->
+                <p class="text-sm text-muted text-center">
+                    Ha az előnézet nem jelenik meg,
+                    <a
+                        :href="file"
+                        target="_blank"
+                        rel="noopener"
+                        class="text-primary font-bold underline"
+                        >nyisd meg új lapon</a
+                    >, vagy töltsd le a PDF-et.
+                </p>
+            </div>
         </template>
 
         <template #footer>
             <UButton
                 :to="file"
+                external
                 download
                 color="primary"
                 variant="solid"

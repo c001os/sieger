@@ -42,17 +42,19 @@ Túrógombóc vaníliasodóval`,
                 <div class="max-w-5xl mx-auto">
                     <article class="bg-elevated border border-default rounded-2xl overflow-hidden shadow-sm">
                         <div class="grid md:grid-cols-2 gap-0">
-                            <!-- Image -->
-                            <div class="relative aspect-[4/3] md:aspect-auto overflow-hidden">
-                                <img
-                                    :src="weeklyMenu.image"
-                                    alt="Heti menü"
-                                    class="w-full h-full object-cover"
-                                />
-                                <div
-                                    class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-md"
-                                >
-                                    {{ weeklyMenu.week }}
+                            <!-- Image – minden sarok egységesen lekerekítve -->
+                            <div class="p-4 pb-0 md:p-6 md:pr-0">
+                                <div class="relative w-full aspect-[4/3] md:aspect-auto md:h-full overflow-hidden rounded-xl">
+                                    <img
+                                        :src="weeklyMenu.image"
+                                        alt="Heti menü"
+                                        class="w-full h-full object-cover"
+                                    />
+                                    <div
+                                        class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-md"
+                                    >
+                                        {{ weeklyMenu.week }}
+                                    </div>
                                 </div>
                             </div>
 

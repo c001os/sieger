@@ -42,9 +42,9 @@ const specials = [
 
         <!-- Checkerboard grid – az „Italspecialitások" blokkokkal egyforma, teljes szélességű cellaméret -->
         <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
-                <!-- Row 1 -->
+                <!-- Row 1 (mobilon/tableten átrendezve valódi sakktáblára) -->
                 <div
-                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4 order-1 lg:order-none"
                 >
                     <div>
                         <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[0].name }}</h3>
@@ -61,7 +61,7 @@ const specials = [
                     </UButton>
                 </div>
 
-                <div class="aspect-square overflow-hidden">
+                <div class="aspect-square overflow-hidden order-2 lg:order-none">
                     <img
                         :src="specials[0].image"
                         :alt="specials[0].name"
@@ -70,7 +70,7 @@ const specials = [
                 </div>
 
                 <div
-                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4 order-4 lg:order-none"
                 >
                     <div>
                         <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[1].name }}</h3>
@@ -87,7 +87,7 @@ const specials = [
                     </UButton>
                 </div>
 
-                <div class="aspect-square overflow-hidden">
+                <div class="aspect-square overflow-hidden order-3 lg:order-none">
                     <img
                         :src="specials[1].image"
                         :alt="specials[1].name"
@@ -96,7 +96,7 @@ const specials = [
                 </div>
 
                 <!-- Row 2 -->
-                <div class="aspect-square overflow-hidden">
+                <div class="aspect-square overflow-hidden order-6 lg:order-none">
                     <img
                         :src="specials[2].image"
                         :alt="specials[2].name"
@@ -105,7 +105,7 @@ const specials = [
                 </div>
 
                 <div
-                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4 order-5 lg:order-none"
                 >
                     <div>
                         <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[2].name }}</h3>
@@ -122,7 +122,7 @@ const specials = [
                     </UButton>
                 </div>
 
-                <div class="aspect-square overflow-hidden">
+                <div class="aspect-square overflow-hidden order-7 lg:order-none">
                     <img
                         :src="specials[3].image"
                         :alt="specials[3].name"
@@ -131,7 +131,7 @@ const specials = [
                 </div>
 
                 <div
-                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4"
+                    class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4 order-8 lg:order-none"
                 >
                     <div>
                         <h3 class="text-lg md:text-2xl font-bold text-default mb-2">{{ specials[3].name }}</h3>

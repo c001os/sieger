@@ -56,6 +56,7 @@ const categories = computed(() => menu.value?.categories ?? []);
                         />
                         <UButton
                             :to="foodMenuPdf"
+                            external
                             download
                             color="primary"
                             variant="solid"

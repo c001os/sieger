@@ -56,6 +56,7 @@ const drinkMenu = {
                             />
                             <UButton
                                 :to="drinkMenu.file"
+                                external
                                 download
                                 color="primary"
                                 variant="solid"

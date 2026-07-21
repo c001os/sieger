@@ -24,4 +24,3 @@ scrape/
 .env
 .env.*
 !.env.example
-public/documents/

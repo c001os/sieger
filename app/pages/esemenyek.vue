@@ -83,19 +83,21 @@ function eventButtonTo(button) {
                         class="group bg-elevated border border-default rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
                     >
                         <div class="grid md:grid-cols-2 gap-0">
-                            <!-- Image (1200x630) -->
-                            <div class="relative aspect-[1200/630] md:aspect-auto overflow-hidden">
-                                <img
-                                    :src="event.image"
-                                    :alt="event.title"
-                                    width="1200"
-                                    height="630"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                />
-                                <div
-                                    class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-md"
-                                >
-                                    {{ event.date }}
+                            <!-- Image (1200x630) – minden sarok egységesen lekerekítve -->
+                            <div class="p-4 pb-0 md:p-6 md:pr-0">
+                                <div class="relative w-full aspect-[1200/630] md:aspect-auto md:h-full overflow-hidden rounded-xl">
+                                    <img
+                                        :src="event.image"
+                                        :alt="event.title"
+                                        width="1200"
+                                        height="630"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    <div
+                                        class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-md"
+                                    >
+                                        {{ event.date }}
+                                    </div>
                                 </div>
                             </div>
 

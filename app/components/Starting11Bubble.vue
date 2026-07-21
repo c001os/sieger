@@ -51,8 +51,9 @@ const showFood = computed(() => isHovered.value || autoShowFood.value);
     >
         <div class="flex items-center gap-3 md:block">
             <!-- Kör buborék: alap nézetben csapatlogó, hoverre ételfotó -->
+            <!-- Desktopon a szülő (pálya pozíció / csere rács cella) adja a szélességet, a buborék kitölti -->
             <div
-                class="relative w-14 h-14 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-white/80 bg-white shadow-2xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:border-primary"
+                class="relative w-16 h-16 md:w-full md:h-auto md:aspect-square rounded-full overflow-hidden border-2 border-white/80 bg-white shadow-2xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:border-primary"
             >
                 <img
                     :src="item.logo"
