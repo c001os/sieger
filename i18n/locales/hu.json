@@ -3,7 +3,7 @@
     "start": "Start",
     "delivery": "Kiszállítás",
     "about": "A Sieger",
-    "specials": "Specialitások",
+    "specials": "Chef ajánlata",
     "food_menu": "Ajánlatunk",
     "drinks_menu": "Itallap",
     "events": "Események",
@@ -46,7 +46,21 @@
   "booking": {
     "title": "Asztalfoglalás",
     "description": "Válassz egy lehetőséget az asztalfoglaláshoz.",
-    "online": "Online asztalfoglalás"
+    "online": "Online asztalfoglalás",
+    "columns": {
+      "restaurant": {
+        "title": "Étterem",
+        "text": "Amennyiben a 6 személyes boxot Bajnokok Ligája- vagy egyéb nemzetközi mérkőzés idejére szeretné lefoglalni, a foglalás 36 000 Ft értékű kötelező fogyasztáshoz kötött. Minden egyéb helyünk foglalása, valamint a nem kiemelt időszakokban történő boxfoglalás fogyasztási kötelezettség nélkül vehető igénybe."
+      },
+      "vip": {
+        "title": "VIP terem",
+        "text": "VIP termünket kisebb családi összejövetelekre, szülinapokra vagy akár baráti meccsnézésre ajánljuk. Maximum létszám: 6-8 fő. Foglalás esetén 48 000 Ft-os lefogyasztás szükséges."
+      },
+      "terrace": {
+        "title": "Terasz",
+        "text": "Esti hangulatvilágítással, napernyővel ellátva, kellemes környezetben."
+      }
+    }
   },
   "pages": {
     "home": {
@@ -67,9 +81,10 @@
     },
     "itallap": {
       "title": "Itallap – Sieger Sport Bár",
-      "description": "Böngéssz aktuális itallapunkban, vagy töltsd le PDF formátumban.",
+      "description": "Böngéssz aktuális online itallapunkban: üdítők, kávé, sörök, röviditalok és cocktailok.",
       "heading": "Itallap",
-      "card_description": "Aktuális italválasztékunk PDF formátumban."
+      "lead": "Böngéssz aktuális online itallapunkban, kategóriánként rendezve.",
+      "error": "Hiba történt az itallap betöltése közben."
     },
     "esemenyek": {
       "title": "Események – Sieger Sport Bár",

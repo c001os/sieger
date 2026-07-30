@@ -1,5 +1,5 @@
 <script setup>
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 useHead(() => ({
     title: t('pages.itallap.title'),
@@ -11,7 +11,13 @@ useHead(() => ({
     ],
 }));
 
-const drinkMenuFile = '/documents/sieger_itallap_2026_weboldalra.pdf';
+const { data: drinks, pending, error } = await useFetch('/api/drinks');
+
+function text(obj) {
+    return obj?.[locale.value] || obj?.hu || '';
+}
+
+const categories = computed(() => drinks.value?.categories ?? []);
 </script>
 
 <template>
@@ -21,51 +27,52 @@ const drinkMenuFile = '/documents/sieger_itallap_2026_weboldalra.pdf';
             <UContainer class="text-center">
                 <h1 class="text-4xl md:text-6xl font-black text-default tracking-wider mb-4">{{ $t('pages.itallap.heading') }}</h1>
                 <p class="text-muted text-lg max-w-2xl mx-auto">
-                    {{ $t('pages.itallap.description') }}
+                    {{ $t('pages.itallap.lead') }}
                 </p>
             </UContainer>
         </section>
 
-        <!-- Download -->
-        <section class="py-24 bg-muted">
+        <!-- Online drinks menu -->
+        <section class="py-24 bg-default border-t border-default">
             <UContainer>
-                <div class="max-w-2xl mx-auto">
-                    <div
-                        class="bg-elevated border border-default rounded-lg p-8 md:p-10 flex flex-col items-center text-center gap-6"
-                    >
-                        <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                            <UIcon
-                                name="i-lucide-file-text"
-                                class="w-10 h-10 text-primary"
-                            />
-                        </div>
+                <div
+                    v-if="pending"
+                    class="text-center py-12"
+                >
+                    <UIcon
+                        name="i-lucide-loader-2"
+                        class="w-8 h-8 animate-spin text-primary"
+                    />
+                </div>
 
-                        <div>
-                            <h2 class="text-2xl font-bold text-default mb-2">{{ $t('pages.itallap.heading') }}</h2>
-                            <p class="text-sm text-muted">{{ $t('pages.itallap.card_description') }}</p>
-                        </div>
+                <div
+                    v-else-if="error"
+                    class="text-center text-error py-12"
+                >
+                    {{ $t('pages.itallap.error') }}
+                </div>
 
-                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
-                            <PdfModalButton
-                                :file="drinkMenuFile"
-                                :title="$t('pages.itallap.heading')"
-                                :button-label="$t('common.view')"
+                <template v-else-if="drinks">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-black text-default tracking-wider mb-4">
+                            {{ text(drinks.title) }}
+                        </h2>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div
+                            v-for="category in categories"
+                            :key="category.hu"
+                            class="bg-elevated border border-default rounded-lg p-6 md:p-8"
+                        >
+                            <MenuCategory
+                                :title="text(category)"
+                                :items="category.items"
+                                :images="category.images ?? []"
                             />
-                            <UButton
-                                :to="drinkMenuFile"
-                                external
-                                download
-                                color="primary"
-                                variant="solid"
-                                size="lg"
-                                icon="i-lucide-download"
-                                class="uppercase tracking-widest justify-center w-full sm:w-auto"
-                            >
-                                {{ $t('common.download') }}
-                            </UButton>
                         </div>
                     </div>
-                </div>
+                </template>
             </UContainer>
         </section>
     </div>

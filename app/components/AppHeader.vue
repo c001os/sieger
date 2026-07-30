@@ -1,6 +1,6 @@
 <template>
     <header class="fixed top-0 w-full z-50 bg-default/90 backdrop-blur-md border-b border-default text-default">
-        <UContainer class="flex items-center justify-between h-20">
+        <UContainer class="flex items-center justify-between h-20 max-w-none">
             <!-- Logo -->
             <NuxtLink
                 :to="localePath('/')"
@@ -14,7 +14,7 @@
             </NuxtLink>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-widest uppercase">
+            <nav class="hidden xl:flex items-center gap-6 2xl:gap-8 whitespace-nowrap font-medium text-sm tracking-widest uppercase">
                 <NuxtLink
                     :to="localePath('/')"
                     class="hover:text-primary transition-colors"
@@ -59,6 +59,15 @@
                     class="hover:text-primary transition-colors"
                     >{{ $t('nav.gallery') }}</NuxtLink
                 >
+                <!-- Kiemelt asztalfoglalás gomb -->
+                <UButton
+                    color="primary"
+                    variant="solid"
+                    class="uppercase tracking-widest font-bold"
+                    @click="isBookingOpen = true"
+                >
+                    {{ $t('buttons.book_table') }}
+                </UButton>
             </nav>
 
             <!-- Right Actions (Lang + Social + Theme) -->
@@ -95,7 +104,7 @@
                     color="neutral"
                     variant="ghost"
                     :icon="isMenuOpen ? 'i-lucide-x' : 'i-lucide-menu'"
-                    class="md:hidden"
+                    class="xl:hidden"
                     @click="isMenuOpen = !isMenuOpen"
                 />
             </div>
@@ -104,7 +113,7 @@
         <!-- Mobile Menu Overlay -->
         <div
             v-if="isMenuOpen"
-            class="fixed inset-0 top-20 bg-default/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 md:hidden transition-all duration-300 min-h-[calc(100vh-5rem)] h-[calc(100vh-5rem)] overflow-y-auto"
+            class="fixed inset-0 top-20 bg-default/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 xl:hidden transition-all duration-300 min-h-[calc(100vh-5rem)] h-[calc(100vh-5rem)] overflow-y-auto"
         >
             <nav class="flex flex-col items-center gap-8 font-medium text-lg tracking-widest uppercase py-8">
                 <NuxtLink
@@ -160,7 +169,7 @@
                             >{{ $t('nav.offers.deli') }}</NuxtLink
                         >
                         <NuxtLink
-                            :to="localePath('/chef-ajanlata')"
+                            :to="localePath('/#specials')"
                             @click="isMenuOpen = false"
                             class="hover:text-primary transition-colors"
                             >{{ $t('nav.offers.chef') }}</NuxtLink
@@ -185,6 +194,19 @@
                     class="hover:text-primary transition-colors"
                     >{{ $t('nav.gallery') }}</NuxtLink
                 >
+                <!-- Kiemelt asztalfoglalás gomb -->
+                <UButton
+                    color="primary"
+                    variant="solid"
+                    size="xl"
+                    class="uppercase tracking-widest font-bold"
+                    @click="
+                        isMenuOpen = false;
+                        isBookingOpen = true;
+                    "
+                >
+                    {{ $t('buttons.book_table') }}
+                </UButton>
             </nav>
             <div class="flex items-center gap-6 pb-8">
                 <NuxtLink
@@ -211,6 +233,8 @@
                 </NuxtLink>
             </div>
         </div>
+
+        <BookingModal v-model:open="isBookingOpen" />
     </header>
 </template>
 
@@ -219,12 +243,13 @@ const localePath = useLocalePath();
 const { t } = useI18n();
 const isMenuOpen = ref(false);
 const isOffersOpen = ref(false);
+const isBookingOpen = ref(false);
 
 const offerItems = computed(() => [
     { label: t('nav.offers.food_menu'), to: localePath('/etlap') },
     { label: t('nav.offers.starting11'), to: localePath('/kezdo-11') },
     { label: t('nav.offers.deli'), to: localePath('/deli-felido') },
-    { label: t('nav.offers.chef'), to: localePath('/chef-ajanlata') },
+    { label: t('nav.offers.chef'), to: localePath('/#specials') },
 ]);
 
 // Close menu when route changes

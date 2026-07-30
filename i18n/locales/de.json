@@ -3,7 +3,7 @@
     "start": "Start",
     "delivery": "Lieferung",
     "about": "Über Sieger",
-    "specials": "Spezialitäten",
+    "specials": "Empfehlung des Küchenchefs",
     "food_menu": "Unser Angebot",
     "drinks_menu": "Getränkekarte",
     "events": "Veranstaltungen",
@@ -46,7 +46,21 @@
   "booking": {
     "title": "Tischreservierung",
     "description": "Wähle eine Option für die Tischreservierung.",
-    "online": "Online-Tischreservierung"
+    "online": "Online-Tischreservierung",
+    "columns": {
+      "restaurant": {
+        "title": "Restaurant",
+        "text": "Wenn Sie die 6-Personen-Box für Champions-League- oder andere internationale Spiele reservieren möchten, ist die Buchung an einen Mindestverzehr von 36 000 Ft gebunden. Alle anderen Plätze sowie Box-Reservierungen außerhalb von Highlight-Spielzeiten sind ohne Mindestverzehr buchbar."
+      },
+      "vip": {
+        "title": "VIP-Raum",
+        "text": "Unseren VIP-Raum empfehlen wir für kleinere Familienfeiern, Geburtstage oder zum gemeinsamen Fußballschauen mit Freunden. Maximale Personenzahl: 6-8 Personen. Bei Reservierung ist ein Mindestverzehr von 48 000 Ft erforderlich."
+      },
+      "terrace": {
+        "title": "Terrasse",
+        "text": "Mit stimmungsvoller Abendbeleuchtung und Sonnenschirmen in angenehmer Atmosphäre."
+      }
+    }
   },
   "pages": {
     "home": {
@@ -67,9 +81,10 @@
     },
     "itallap": {
       "title": "Getränkekarte – Sieger Sport Bar",
-      "description": "Stöbere in unserer aktuellen Getränkekarte oder lade sie als PDF herunter.",
+      "description": "Stöbere in unserer aktuellen Online-Getränkekarte: Erfrischungsgetränke, Kaffee, Biere, Spirituosen und Cocktails.",
       "heading": "Getränkekarte",
-      "card_description": "Unsere aktuelle Getränkeauswahl als PDF."
+      "lead": "Stöbere in unserer aktuellen Online-Getränkekarte, nach Kategorien geordnet.",
+      "error": "Beim Laden der Getränkekarte ist ein Fehler aufgetreten."
     },
     "esemenyek": {
       "title": "Veranstaltungen – Sieger Sport Bar",

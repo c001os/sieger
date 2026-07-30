@@ -3,7 +3,7 @@
     "start": "Start",
     "delivery": "Delivery",
     "about": "About Sieger",
-    "specials": "Specials",
+    "specials": "Chef's Recommendation",
     "food_menu": "Our Offers",
     "drinks_menu": "Drinks Menu",
     "events": "Events",
@@ -46,7 +46,21 @@
   "booking": {
     "title": "Table Reservation",
     "description": "Choose an option for booking a table.",
-    "online": "Online table reservation"
+    "online": "Online table reservation",
+    "columns": {
+      "restaurant": {
+        "title": "Restaurant",
+        "text": "If you would like to reserve the 6-person box for Champions League or other international matches, the booking requires a minimum consumption of 36 000 Ft. All our other tables, as well as box reservations outside featured match periods, can be booked without any minimum consumption."
+      },
+      "vip": {
+        "title": "VIP Room",
+        "text": "Our VIP room is ideal for smaller family gatherings, birthdays or watching matches with friends. Maximum capacity: 6-8 people. Reservations require a minimum consumption of 48 000 Ft."
+      },
+      "terrace": {
+        "title": "Terrace",
+        "text": "With evening mood lighting and parasols, in a pleasant setting."
+      }
+    }
   },
   "pages": {
     "home": {
@@ -67,9 +81,10 @@
     },
     "itallap": {
       "title": "Drinks Menu – Sieger Sport Bar",
-      "description": "Browse our current drinks menu, or download it as a PDF.",
+      "description": "Browse our current online drinks menu: soft drinks, coffee, beers, spirits and cocktails.",
       "heading": "Drinks Menu",
-      "card_description": "Our current drinks selection as a PDF."
+      "lead": "Browse our current online drinks menu, organized by category.",
+      "error": "An error occurred while loading the drinks menu."
     },
     "esemenyek": {
       "title": "Events – Sieger Sport Bar",

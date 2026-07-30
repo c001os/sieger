@@ -9,6 +9,7 @@ const menu = {
             hu: 'Leves',
             en: 'Soups',
             de: 'Suppen',
+            images: ['/media/food/menu/leves.webp'],
             items: [
                 {
                     hu: 'Sütőtök krémleves, karamellizált tökmag',
@@ -34,6 +35,7 @@ const menu = {
             hu: 'Előétel',
             en: 'Starters',
             de: 'Vorspeisen',
+            images: ['/media/food/menu/eloetel.webp'],
             items: [
                 {
                     hu: 'Sieger Tatár beefsteak',
@@ -53,6 +55,7 @@ const menu = {
             hu: 'Főétel',
             en: 'Main courses',
             de: 'Hauptgerichte',
+            images: ['/media/food/menu/foetel.webp', '/media/food/menu/foetel_2.webp', '/media/food/menu/foetel_3.webp'],
             items: [
                 {
                     hu: 'Bélszín steak, burgonyapüré, grillezett zöldségek',
@@ -120,6 +123,7 @@ const menu = {
             hu: 'Saláta',
             en: 'Salads',
             de: 'Salate',
+            images: ['/media/food/menu/salata.webp'],
             items: [
                 {
                     hu: 'Cézár saláta csirkével',
@@ -145,6 +149,7 @@ const menu = {
             hu: 'Burgerek',
             en: 'Burgers',
             de: 'Burger',
+            images: ['/media/food/menu/burger.webp'],
             items: [
                 {
                     hu: 'Cheese Burger (Házi kovászos buci, marhahús pogácsa, jégsaláta, cornish uborka, paradicsom, Sieger hamburger szósz, cheddar sajt, coleslaw)',
@@ -176,6 +181,7 @@ const menu = {
             hu: 'Burger köretek',
             en: 'Burger sides',
             de: 'Burger Beilagen',
+            images: ['/media/food/menu/foetel_3.webp'],
             items: [
                 {
                     hu: 'Hasábburgonya',
@@ -207,6 +213,7 @@ const menu = {
             hu: 'Desszertek',
             en: 'Desserts',
             de: 'Desserts',
+            images: ['/media/food/menu/desszert.webp'],
             items: [
                 {
                     hu: 'Császármorzsa, almahab',

@@ -106,6 +106,7 @@ const categories = computed(() => menu.value?.categories ?? []);
                             <MenuCategory
                                 :title="text(category)"
                                 :items="category.items"
+                                :images="category.images ?? []"
                             />
                         </div>
                     </div>
