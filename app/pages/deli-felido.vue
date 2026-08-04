@@ -65,10 +65,10 @@ Quarkknödel mit Vanillesoße`,
             <UContainer>
                 <div class="max-w-5xl mx-auto">
                     <article class="bg-elevated border border-default rounded-2xl overflow-hidden shadow-sm">
-                        <div class="grid md:grid-cols-2 gap-0">
+                        <div>
                             <!-- Image – minden sarok egységesen lekerekítve -->
-                            <div class="p-4 pb-0 md:p-6 md:pr-0">
-                                <div class="relative w-full aspect-[4/3] md:aspect-auto md:h-full overflow-hidden rounded-xl">
+                            <div class="p-4 pb-0 md:p-6 md:pb-0">
+                                <div class="relative w-full aspect-video overflow-hidden rounded-xl">
                                     <img
                                         :src="weeklyMenu.image"
                                         :alt="$t('pages.deli.menu_title')"
