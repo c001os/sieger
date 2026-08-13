@@ -1,15 +1,10 @@
 <script setup>
 const { t, locale } = useI18n();
 
-useHead(() => ({
+usePageSeo({
     title: t('pages.deli.title'),
-    meta: [
-        {
-            name: 'description',
-            content: t('pages.deli.description'),
-        },
-    ],
-}));
+    description: t('pages.deli.description'),
+});
 
 function text(obj) {
     return obj?.[locale.value] || obj?.hu || '';

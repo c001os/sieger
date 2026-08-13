@@ -1,15 +1,10 @@
 <script setup>
 const { t, locale } = useI18n();
 
-useHead(() => ({
+usePageSeo({
     title: t('pages.itallap.title'),
-    meta: [
-        {
-            name: 'description',
-            content: t('pages.itallap.description'),
-        },
-    ],
-}));
+    description: t('pages.itallap.description'),
+});
 
 const { data: drinks, pending, error } = await useFetch('/api/drinks-menu');
 

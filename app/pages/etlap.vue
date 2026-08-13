@@ -1,15 +1,10 @@
 <script setup>
 const { t, locale } = useI18n();
 
-useHead(() => ({
+usePageSeo({
     title: t('pages.etlap.title'),
-    meta: [
-        {
-            name: 'description',
-            content: t('pages.etlap.description'),
-        },
-    ],
-}));
+    description: t('pages.etlap.description'),
+});
 
 const { data: menu, pending, error } = await useFetch('/api/food-menu');
 const { data: documents } = await useFetch('/api/documents');

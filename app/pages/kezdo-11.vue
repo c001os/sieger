@@ -1,15 +1,10 @@
 <script setup>
 const { t } = useI18n();
 
-useHead(() => ({
+usePageSeo({
     title: t('pages.starting11.title'),
-    meta: [
-        {
-            name: 'description',
-            content: t('pages.starting11.description'),
-        },
-    ],
-}));
+    description: t('pages.starting11.description'),
+});
 </script>
 
 <template>

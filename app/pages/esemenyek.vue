@@ -1,15 +1,10 @@
 <script setup>
 const { t, locale } = useI18n();
 
-useHead(() => ({
+usePageSeo({
     title: t('pages.esemenyek.title'),
-    meta: [
-        {
-            name: 'description',
-            content: t('pages.esemenyek.description'),
-        },
-    ],
-}));
+    description: t('pages.esemenyek.description'),
+});
 
 const isBookingOpen = ref(false);
 const localePath = useLocalePath();

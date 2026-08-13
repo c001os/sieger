@@ -1,15 +1,10 @@
 <script setup>
 const { t } = useI18n();
 
-useHead(() => ({
+usePageSeo({
     title: t('pages.chef.title'),
-    meta: [
-        {
-            name: 'description',
-            content: t('pages.chef.description'),
-        },
-    ],
-}));
+    description: t('pages.chef.description'),
+});
 
 const { data: documents } = await useFetch('/api/documents');
 
