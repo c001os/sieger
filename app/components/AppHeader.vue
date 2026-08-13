@@ -33,6 +33,7 @@
                 <UDropdownMenu
                     :items="offerItems"
                     :popper="{ placement: 'bottom-start' }"
+                    :modal="false"
                 >
                     <button
                         class="hover:text-primary transition-colors flex items-center gap-1 uppercase tracking-widest"

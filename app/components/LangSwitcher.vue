@@ -16,6 +16,7 @@ const availableLocales = computed(() => {
     <UDropdownMenu
         :items="availableLocales"
         :popper="{ placement: 'bottom-end' }"
+        :modal="false"
     >
         <UButton
             color="neutral"
