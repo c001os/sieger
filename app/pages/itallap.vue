@@ -11,7 +11,7 @@ useHead(() => ({
     ],
 }));
 
-const { data: drinks, pending, error } = await useFetch('/api/drinks');
+const { data: drinks, pending, error } = await useFetch('/api/drinks-menu');
 
 function text(obj) {
     return obj?.[locale.value] || obj?.hu || '';

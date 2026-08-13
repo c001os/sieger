@@ -28,72 +28,8 @@ const buttonLabelOptions = computed(() => ({
 
 // button.type: 'route' = belső oldal, 'external' = külső link, 'pdf' = PDF dokumentum
 // Képméret: 1200x630 px (public/media/events/)
-const events = [
-    {
-        id: 1,
-        title: {
-            hu: 'Szurkolj velünk óriáskivetítőn!',
-            en: 'Cheer with us on the giant screen!',
-            de: 'Feuere mit uns auf der Großbildleinwand an!',
-        },
-        date: {
-            hu: '2026. július 19.',
-            en: 'July 19, 2026',
-            de: '19. Juli 2026',
-        },
-        time: '21:00',
-        image: '/media/events/szurkolj_velunk_oriaskivetiton_1200x630.webp',
-        description: {
-            hu: 'Szurkolj velünk a világbajnokság legizgalmasabb mérkőzésein! Nézd a meccseket óriáskivetítőn, élvezd a fantasztikus hangulatot, és válassz finom fogásaink közül a Kezdő 11-es ajánlatból!',
-            en: 'Cheer with us during the most exciting matches of the World Cup! Watch the games on our giant screen, enjoy the fantastic atmosphere, and choose from our delicious dishes in the Starting 11 offer!',
-            de: 'Feuere mit uns bei den spannendsten Spielen der Weltmeisterschaft an! Sieh dir die Spiele auf unserer Großbildleinwand an, genieße die fantastische Atmosphäre und wähle aus unseren leckeren Gerichten des Startelf-Angebots!',
-        },
-        button: { label: 'reszletek', type: 'route', to: '/kezdo-11' },
-    },
-    {
-        id: 2,
-        title: {
-            hu: 'Formula-1 Weekend – Movie Night',
-            en: 'Formula-1 Weekend – Movie Night',
-            de: 'Formula-1 Weekend – Movie Night',
-        },
-        date: {
-            hu: '2026. július 25.',
-            en: 'July 25, 2026',
-            de: '25. Juli 2026',
-        },
-        time: '20:00',
-        image: '/media/events/f1_movie_night_1200x630.webp',
-        description: {
-            hu: 'A délutáni időmérő után nálunk folytatódik az F1-hangulat: nagykivetítőnkön levetítjük az F1 – A filmet, hogy egy igazán motorsportos estét tölthess el velünk.',
-            en: 'The F1 vibes continue at our place after the afternoon qualifying: we are screening F1 – The Movie on our big screen, so you can spend a truly motorsport evening with us.',
-            de: 'Nach dem Nachmittags-Qualifying geht die F1-Stimmung bei uns weiter: Auf unserer Großbildleinwand zeigen wir F1 – Der Film, damit du einen echten Motorsport-Abend mit uns verbringen kannst.',
-        },
-        button: { label: 'info', type: 'external', to: 'https://www.facebook.com/siegersportbar' },
-    },
-    {
-        id: 3,
-        title: {
-            hu: 'Sieger x Uni-Elite Sport Club – Formula-1 Weekend',
-            en: 'Sieger x Uni-Elite Sport Club – Formula-1 Weekend',
-            de: 'Sieger x Uni-Elite Sport Club – Formula-1 Weekend',
-        },
-        date: {
-            hu: '2026. július 24–26.',
-            en: 'July 24–26, 2026',
-            de: '24.–26. Juli 2026',
-        },
-        time: '',
-        image: '/media/events/f1_weekend_uni_elite_1200x630.webp',
-        description: {
-            hu: 'Szurkoljuk végig együtt a Magyar Nagydíjat! Hozd el a barátokat, éld át a száguldás élményét az autószimulátorokban, pörögj a dj ütemeire, és izguld végig a futamot a hatalmas nagykivetítőnkön! És ez még nem minden: brutális járművekkel és szuper nyereményekkel is várunk!',
-            en: "Let's cheer through the Hungarian Grand Prix together! Bring your friends, experience the thrill of speed in the racing simulators, get into the groove with the DJ, and live through the race on our huge big screen! And that's not all: brutal vehicles and super prizes await you too!",
-            de: 'Lass uns gemeinsam den Großen Preis von Ungarn anfeuern! Bring deine Freunde mit, erlebe das Gefühl des Rasens in den Rennsimulatoren, feiere zu den Beats des DJs und erlebe das Rennen auf unserer riesigen Großbildleinwand! Und das ist noch nicht alles: Brutale Fahrzeuge und super Preise erwarten dich ebenfalls!',
-        },
-        featured: true,
-        button: { label: 'info', type: 'external', to: 'https://www.facebook.com/siegersportbar' },
-    },
-];
+const { data: events } = await useFetch('/api/events');
+const eventsList = computed(() => events.value ?? []);
 
 function eventButtonTo(button) {
     return button.type === 'route' ? localePath(button.to) : button.to;
@@ -117,7 +53,7 @@ function eventButtonTo(button) {
             <UContainer>
                 <div class="max-w-5xl mx-auto space-y-12">
                     <article
-                        v-for="event in events"
+                        v-for="event in eventsList"
                         :key="event.id"
                         class="group bg-elevated border border-default rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
                     >

@@ -11,7 +11,11 @@ useHead(() => ({
     ],
 }));
 
-const pdfFile = '/documents/sieger_chef_ajanlata_a4.pdf';
+const { data: documents } = await useFetch('/api/documents');
+
+const pdfFile = computed(() => {
+    return documents.value?.find((d) => d.slug === 'chef-ajanlata')?.url ?? '';
+});
 </script>
 
 <template>

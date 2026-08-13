@@ -62,34 +62,7 @@ function text(obj) {
     return obj?.[locale.value] || obj?.hu || '';
 }
 
-const matches = [
-    {
-        id: 1,
-        team1: { name: 'Real Madrid', color: '#FEBE10' },
-        team2: { name: 'Barcelona', color: '#A50044' },
-        time: '21:00',
-        date: { hu: 'Holnap', en: 'Tomorrow', de: 'Morgen' },
-    },
-    {
-        id: 2,
-        team1: { name: 'Bayern Munich', color: '#DC052D' },
-        team2: { name: 'Dortmund', color: '#FDE100' },
-        time: '18:30',
-        date: { hu: 'Szombat, okt. 14.', en: 'Saturday, Oct 14', de: 'Samstag, 14. Okt.' },
-    },
-    {
-        id: 3,
-        team1: { name: 'Arsenal', color: '#EF0107' },
-        team2: { name: 'Chelsea', color: '#034694' },
-        time: '15:00',
-        date: { hu: 'Vasárnap, okt. 15.', en: 'Sunday, Oct 15', de: 'Sonntag, 15. Okt.' },
-    },
-    {
-        id: 4,
-        team1: { name: 'Man City', color: '#6CABDD' },
-        team2: { name: 'Liverpool', color: '#C8102E' },
-        time: '12:30',
-        date: { hu: 'Vasárnap, okt. 15.', en: 'Sunday, Oct 15', de: 'Sonntag, 15. Okt.' },
-    },
-];
+const { data: matchesData } = await useFetch('/api/match-cards');
+
+const matches = computed(() => matchesData.value ?? []);
 </script>

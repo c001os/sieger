@@ -64,11 +64,8 @@ function text(obj) {
                         {{ text(item) }}
                     </span>
                     <div class="flex flex-col gap-1 text-primary font-semibold whitespace-nowrap md:text-right">
-                        <span
-                            v-for="(price, pIndex) in item.prices"
-                            :key="pIndex"
-                        >
-                            {{ price }}
+                        <span v-if="item.price">
+                            {{ item.price }}
                         </span>
                     </div>
                 </li>

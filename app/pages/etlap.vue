@@ -11,9 +11,12 @@ useHead(() => ({
     ],
 }));
 
-const { data: menu, pending, error } = await useFetch('/api/menu');
+const { data: menu, pending, error } = await useFetch('/api/food-menu');
+const { data: documents } = await useFetch('/api/documents');
 
-const foodMenuPdf = '/documents/sieger_etlap_2026_tavasz_weboldalra.pdf';
+const foodMenuPdf = computed(() => {
+    return documents.value?.find((d) => d.slug === 'etlap')?.url ?? '';
+});
 
 function text(obj) {
     return obj?.[locale.value] || obj?.hu || '';

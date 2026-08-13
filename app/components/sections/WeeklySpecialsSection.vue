@@ -6,48 +6,7 @@ function text(obj) {
     return obj?.[locale.value] || obj?.hu || '';
 }
 
-const specials = [
-    {
-        name: { hu: 'Bélszín steak', en: 'Beef tenderloin steak', de: 'Rinderfiletsteak' },
-        desc: {
-            hu: 'Burgonyapüré, grillezett zöldségek',
-            en: 'Mashed potatoes, grilled vegetables',
-            de: 'Kartoffelpüree, gegrilltes Gemüse',
-        },
-        image: '/media/food/specials/steak.webp',
-    },
-    {
-        name: {
-            hu: 'Sieger „malacos krumpli”',
-            en: 'Sieger Pulled Pork Potatoes',
-            de: 'Sieger Spanferkel-Kartoffeln',
-        },
-        desc: {
-            hu: 'Hasábburgonya, pulled pork, cheddar sajt, jalapeno',
-            en: 'French fries, pulled pork, cheddar cheese, jalapeno',
-            de: 'Pommes Frites, Pulled Pork, Cheddar-Käse, Jalapeno',
-        },
-        image: '/media/food/burgerek.webp',
-    },
-    {
-        name: { hu: 'Csirkemell steak', en: 'Chicken breast steak', de: 'Hähnchenbruststeak' },
-        desc: {
-            hu: 'Édesburgonya püré',
-            en: 'Sweet potato purée',
-            de: 'Süßkartoffelpüree',
-        },
-        image: '/media/food/specials/csirkemell_steak_02.webp',
-    },
-    {
-        name: { hu: 'Tarja steak', en: 'Pork neck steak', de: 'Nackensteak' },
-        desc: {
-            hu: 'Vadas mártás, zsemlegombóc',
-            en: 'Vadas sauce, bread dumpling',
-            de: '„Vadas“-Soße, Semmelknödel',
-        },
-        image: '/media/food/specials/tarja_steak_vadasasn_01.webp',
-    },
-];
+const { data: specials, pending } = await useFetch('/api/special-offers');
 </script>
 
 <template>
@@ -67,8 +26,21 @@ const specials = [
             </div>
         </UContainer>
 
+        <div
+            v-if="pending"
+            class="text-center py-12"
+        >
+            <UIcon
+                name="i-lucide-loader-2"
+                class="w-8 h-8 animate-spin text-primary"
+            />
+        </div>
+
         <!-- Checkerboard grid – az „Italspecialitások" blokkokkal egyforma, teljes szélességű cellaméret -->
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+        <div
+            v-else-if="specials && specials.length"
+            class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
+        >
                 <!-- Row 1 (mobilon/tableten átrendezve valódi sakktáblára) -->
                 <div
                     class="aspect-square bg-default flex flex-col items-center justify-center p-4 md:p-6 text-center gap-4 order-1 lg:order-none"

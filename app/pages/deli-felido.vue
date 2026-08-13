@@ -17,35 +17,20 @@ function text(obj) {
 
 // Heti menü – a későbbi Directus adminban egyetlen szöveges blokk + egy kép
 // (PDF feltöltés megszűnt, a menü az egész hétre egységesen vonatkozik)
-const weeklyMenu = {
-    week: {
-        hu: '2026. július 21. – 27.',
-        en: 'July 21 – 27, 2026',
-        de: '21. – 27. Juli 2026',
-    },
-    image: '/media/food/fejlec.webp',
-    text: {
-        hu: `Frankfurti leves
+const { data: weeklyMenuData } = await useFetch('/api/weekly-menu');
 
-Csirkepaprikás galuskával
-vagy Sertésszűz erdei gombamártással, hasábburgonyával
-
-Túrógombóc vaníliasodóval`,
-        en: `Frankfurt soup
-
-Chicken paprikash with nokedli dumplings
-or Pork tenderloin with forest mushroom sauce and steak fries
-
-Curd cheese dumplings with vanilla sauce`,
-        de: `Frankfurter Suppe
-
-Hühnerpaprikasch mit Nockerln
-oder Schweinefilet mit Waldpilzsoße und Pommes frites
-
-Quarkknödel mit Vanillesoße`,
-    },
-    price: '2 990 Ft',
-};
+const weeklyMenu = computed(() => {
+    const data = weeklyMenuData.value;
+    if (!data) {
+        return null;
+    }
+    return {
+        week: data.week,
+        image: data.image,
+        text: data.text,
+        price: data.price,
+    };
+});
 </script>
 
 <template>
@@ -61,7 +46,7 @@ Quarkknödel mit Vanillesoße`,
         </section>
 
         <!-- Weekly menu -->
-        <section class="py-24 bg-muted">
+        <section v-if="weeklyMenu" class="py-24 bg-muted">
             <UContainer>
                 <div class="max-w-5xl mx-auto">
                     <article class="bg-elevated border border-default rounded-2xl overflow-hidden shadow-sm">

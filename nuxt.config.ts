@@ -42,4 +42,10 @@ export default defineNuxtConfig({
         strategy: 'prefix_except_default',
     },
     css: ['~/assets/css/main.css'],
+    runtimeConfig: {
+        directusToken: process.env.DIRECTUS_TOKEN,
+        public: {
+            directusUrl: process.env.DIRECTUS_URL,
+        },
+    },
 });
