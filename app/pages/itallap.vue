@@ -63,7 +63,7 @@ const categories = computed(() => drinks.value?.categories ?? []);
                             <MenuCategory
                                 :title="text(category)"
                                 :items="category.items"
-                                :images="(category.images ?? []).slice(0, 1)"
+                                :images="category.image ? [category.image] : []"
                             />
                         </div>
                     </div>

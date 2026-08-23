@@ -7,7 +7,7 @@ interface Translation {
 interface DirectusDrinkCategory {
     id: number;
     name: string;
-    images: string[] | null;
+    image: string | null;
     sort: number;
     visible: boolean | number;
     translations: Translation[];
@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
         $fetch<{ data: DirectusDrinkCategory[] }>(`${url}/items/drink_categories`, {
             headers: { Authorization: `Bearer ${token}` },
             query: {
-                fields: 'id,name,images,sort,visible,translations.languages_code,translations.name',
+                fields: 'id,name,image,sort,visible,translations.languages_code,translations.name',
                 sort: 'sort',
                 filter: JSON.stringify({ visible: { _eq: true } }),
                 limit: -1,
@@ -83,9 +83,7 @@ export default defineEventHandler(async (event) => {
         title: { hu: 'Itallap', en: 'Drinks Menu', de: 'Getränkekarte' },
         categories: categories.map((category) => ({
             ...buildText(category.name, category.translations),
-            images: (category.images ?? [])
-                .filter(Boolean)
-                .map((id) => `${url}/assets/${id}`),
+            image: category.image ? `${url}/assets/${category.image}` : null,
             items: (itemsByCategory.get(category.id) ?? []).map((item) => ({
                 ...buildText(item.name, item.translations),
                 description: buildDescription(item.description, item.translations),
