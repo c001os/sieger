@@ -40,7 +40,6 @@ export default defineNuxtConfig({
         classSuffix: '',
     },
     i18n: {
-        lazy: true,
         langDir: 'locales',
         locales: [
             { code: 'hu', file: 'hu.json', language: 'hu' },
@@ -52,6 +51,14 @@ export default defineNuxtConfig({
         baseUrl: siteUrl,
     },
     css: ['~/assets/css/main.css'],
+    typescript: {
+        nodeTsConfig: {
+            compilerOptions: {
+                // a nuxt.config.ts process.env használatához (@types/node)
+                types: ['node'],
+            },
+        },
+    },
     runtimeConfig: {
         directusToken: process.env.DIRECTUS_TOKEN,
         public: {

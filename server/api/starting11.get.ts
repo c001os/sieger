@@ -1,4 +1,4 @@
-import type { DirectusStarting11Item, DirectusTranslation } from '~/server/utils/directus';
+import type { DirectusStarting11Item, DirectusTranslation } from '~~/server/utils/directus';
 
 function getTranslation(translations: DirectusTranslation[], code: string) {
     return translations.find((t) => t.languages_code === code);

@@ -1,4 +1,4 @@
-import type { DirectusMatchCard } from '~/server/utils/directus';
+import type { DirectusMatchCard } from '~~/server/utils/directus';
 
 export default defineEventHandler(async (event) => {
     const { url, token } = getDirectusConfig(event);
