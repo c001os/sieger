@@ -53,14 +53,16 @@
                         {{ $t('footer.opening_hours') }}
                     </h3>
                     <ul class="text-sm text-default space-y-2 text-center md:text-left">
-                        <li>
-                            <span class="font-semibold">{{ $t('footer.monday') }}:</span> 11:00 – 17:00
-                        </li>
-                        <li>
-                            <span class="font-semibold">{{ $t('footer.tue_sat') }}:</span> 11:00 – 00:00
-                        </li>
-                        <li>
-                            <span class="font-semibold">{{ $t('footer.sunday') }}:</span>{{ ' ' }}<span class="text-error font-bold">{{ $t('footer.closed') }}</span>
+                        <li
+                            v-for="oh in openingHours"
+                            :key="oh.day"
+                        >
+                            <span class="font-semibold">{{ $t(`footer.${oh.day}`) }}:</span>
+                            <template v-if="oh.label">{{ oh.label }}</template>
+                            <span
+                                v-else
+                                class="text-error font-bold"
+                            >{{ $t('footer.closed') }}</span>
                         </li>
                     </ul>
                 </div>
@@ -124,4 +126,7 @@
 
 <script setup>
 const localePath = useLocalePath();
+
+const { data: settings } = await useFetch('/api/site-settings');
+const openingHours = computed(() => settings.value?.openingHours ?? []);
 </script>

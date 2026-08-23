@@ -165,7 +165,11 @@
     "rights": "© 2026 Sieger Sport Bár. Minden jog fenntartva!",
     "privacy": "Adatvédelmi tájékoztató",
     "monday": "Hétfő",
-    "tue_sat": "Kedd – Szombat",
+    "tuesday": "Kedd",
+    "wednesday": "Szerda",
+    "thursday": "Csütörtök",
+    "friday": "Péntek",
+    "saturday": "Szombat",
     "sunday": "Vasárnap",
     "closed": "ZÁRVA"
   }

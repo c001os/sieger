@@ -21,6 +21,7 @@ usePageSeo({
 
 // Restaurant (schema.org) strukturált adat a helyi kereshetőséghez
 const siteUrl = useRuntimeConfig().public.siteUrl;
+const { data: settings } = await useFetch('/api/site-settings');
 useHead(() => ({
     script: [
         {
@@ -31,8 +32,8 @@ useHead(() => ({
                 name: 'Sieger Sport Bár',
                 url: siteUrl,
                 image: `${siteUrl}/og-image.jpg`,
-                telephone: '+36 20 615 6491',
-                email: 'info@sieger.hu',
+                telephone: settings.value?.phone || '+36 20 615 6491',
+                email: settings.value?.email || 'info@sieger.hu',
                 priceRange: '$$',
                 servesCuisine: ['Magyar konyha', 'Nemzetközi konyha'],
                 address: {
@@ -42,20 +43,7 @@ useHead(() => ({
                     addressLocality: 'Győr',
                     addressCountry: 'HU',
                 },
-                openingHoursSpecification: [
-                    {
-                        '@type': 'OpeningHoursSpecification',
-                        dayOfWeek: 'Monday',
-                        opens: '11:00',
-                        closes: '17:00',
-                    },
-                    {
-                        '@type': 'OpeningHoursSpecification',
-                        dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                        opens: '11:00',
-                        closes: '23:59',
-                    },
-                ],
+                openingHoursSpecification: settings.value?.openingHoursSpecification ?? [],
                 sameAs: [
                     'https://www.facebook.com/siegersportbar',
                     'https://www.instagram.com/siegersportbar/',
