@@ -33,8 +33,14 @@
                             <span class="text-default font-black text-lg md:text-2xl tracking-wide">
                                 {{ match.time }}
                             </span>
-                            <span class="text-muted text-[10px] md:text-xs font-bold tracking-wider uppercase">
-                                {{ text(match.date) }}
+                            <span class="text-muted text-[10px] md:text-xs font-bold tracking-wider whitespace-nowrap">
+                                {{ match.datePart }}
+                            </span>
+                            <span
+                                v-if="match.dayPart"
+                                class="text-muted text-[10px] md:text-xs font-bold tracking-wider uppercase"
+                            >
+                                {{ match.dayPart }}
                             </span>
                         </div>
 
@@ -58,11 +64,19 @@
 <script setup>
 const { locale } = useI18n();
 
-function text(obj) {
-    return obj?.[locale.value] || obj?.hu || '';
-}
-
 const { data: matchesData } = await useFetch('/api/match-cards');
 
-const matches = computed(() => matchesData.value ?? []);
+// A date mező "2026.08.26 - szerda" vagy "2026.08.26 szerda" formátumú → külön dátum + nap
+const matches = computed(() =>
+    (matchesData.value ?? []).map((match) => {
+        const dateObj = match.date ?? {};
+        const full = dateObj[locale.value] || dateObj.hu || '';
+        const parts = full.replace(/ - /g, ' ').split(/\s+/).filter(Boolean);
+        return {
+            ...match,
+            datePart: parts[0] ?? '',
+            dayPart: parts.slice(1).join(' ') ?? '',
+        };
+    })
+);
 </script>

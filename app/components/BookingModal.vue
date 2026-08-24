@@ -8,7 +8,7 @@ const columns = [
     },
     {
         key: 'vip',
-        image: '/media/interior/vip.webp',
+        image: '/media/interior/vip_v2.webp',
     },
     {
         key: 'terrace',
