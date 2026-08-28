@@ -80,7 +80,7 @@ export default defineEventHandler(async (event) => {
     }
 
     return {
-        title: { hu: 'Étlap 2025 ősz', en: 'Menu autumn 2025', de: 'Speisekarte Herbst 2025' },
+        title: { hu: 'Étlap', en: 'Menu', de: 'Speisekarte' },
         categories: categories.map((category) => ({
             ...buildText(category.name, category.translations),
             image: category.image ? `${url}/assets/${category.image}` : null,
